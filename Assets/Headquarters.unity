@@ -792,7 +792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Explorer
 --- !u!222 &29572638
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6395,7 +6395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Dingo
+  m_Text: Jack
 --- !u!222 &309734126
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9641,6 +9641,41 @@ Prefab:
   m_RootGameObject: {fileID: 1846009549}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &462675638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 462675639}
+  m_Layer: 8
+  m_Name: Tier2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &462675639
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 462675638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1325707405}
+  - {fileID: 669664191}
+  - {fileID: 1000722284}
+  m_Father: {fileID: 1026950483}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &464645572
 GameObject:
   m_ObjectHideFlags: 0
@@ -14009,8 +14044,8 @@ RectTransform:
   - {fileID: 1474047018}
   - {fileID: 1323675308}
   - {fileID: 1408508170}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 6
+  m_Father: {fileID: 462675639}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -14100,6 +14135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TeamMemberName: Titus
+  Tier: 2
 --- !u!1 &676785099
 GameObject:
   m_ObjectHideFlags: 0
@@ -16402,11 +16438,11 @@ RectTransform:
   - {fileID: 49018703}
   - {fileID: 1523577386}
   - {fileID: 1766020403}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 2
+  m_Father: {fileID: 1228446524}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 85, y: 60}
+  m_AnchoredPosition: {x: -162, y: 60}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &814170438
@@ -16493,6 +16529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TeamMemberName: Arthur
+  Tier: 1
 --- !u!1001 &816576347
 Prefab:
   m_ObjectHideFlags: 0
@@ -17877,7 +17914,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Soldier
 --- !u!222 &866231694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20299,11 +20336,11 @@ RectTransform:
   - {fileID: 488159940}
   - {fileID: 1225942359}
   - {fileID: 1378027034}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 9
+  m_Father: {fileID: 462675639}
+  m_RootOrder: 2
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -85, y: 0}
+  m_AnchoredPosition: {x: 162, y: 0}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1000722285
@@ -20389,7 +20426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3521df97cd137e489f60f6d02b46e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamMemberName: Siren
+  TeamMemberName: Rusty
+  Tier: 2
 --- !u!1 &1008724883
 GameObject:
   m_ObjectHideFlags: 0
@@ -20787,15 +20825,9 @@ RectTransform:
   m_Children:
   - {fileID: 689349125}
   - {fileID: 1962606345}
-  - {fileID: 814170437}
-  - {fileID: 1325707405}
-  - {fileID: 2037935657}
-  - {fileID: 1632275027}
-  - {fileID: 669664191}
-  - {fileID: 1562910566}
-  - {fileID: 1701355374}
-  - {fileID: 1000722284}
-  - {fileID: 2028894460}
+  - {fileID: 1228446524}
+  - {fileID: 462675639}
+  - {fileID: 1825061968}
   m_Father: {fileID: 1287499280}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -21345,7 +21377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Brunhilde
+  m_Text: Newton
 --- !u!222 &1057607600
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24165,7 +24197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Defender
 --- !u!222 &1186505341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25151,7 +25183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Siren
+  m_Text: Rusty
 --- !u!222 &1225942358
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25241,6 +25273,41 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1227569365}
+--- !u!1 &1228446523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1228446524}
+  m_Layer: 8
+  m_Name: Tier1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1228446524
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1228446523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 814170437}
+  - {fileID: 1632275027}
+  - {fileID: 1701355374}
+  m_Father: {fileID: 1026950483}
+  m_RootOrder: 2
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1001 &1230078203
 Prefab:
   m_ObjectHideFlags: 0
@@ -27303,11 +27370,11 @@ RectTransform:
   - {fileID: 1395348262}
   - {fileID: 2130317019}
   - {fileID: 1186505339}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 3
+  m_Father: {fileID: 462675639}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 85, y: 0}
+  m_AnchoredPosition: {x: -162, y: 0}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1325707406
@@ -27393,7 +27460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3521df97cd137e489f60f6d02b46e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamMemberName: Newton
+  TeamMemberName: Brunhilde
+  Tier: 2
 --- !u!1 &1325818880
 GameObject:
   m_ObjectHideFlags: 0
@@ -29015,7 +29083,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Soldier
 --- !u!222 &1378027036
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29634,7 +29702,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Explorer
 --- !u!222 &1398566050
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29965,7 +30033,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Explorer
 --- !u!222 &1408508172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33483,8 +33551,8 @@ RectTransform:
   - {fileID: 1387358902}
   - {fileID: 2023520506}
   - {fileID: 29572636}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 7
+  m_Father: {fileID: 1825061968}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: -60}
@@ -33573,7 +33641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3521df97cd137e489f60f6d02b46e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamMemberName: Rusty
+  TeamMemberName: Siren
+  Tier: 3
 --- !u!1001 &1568130829
 Prefab:
   m_ObjectHideFlags: 0
@@ -33677,7 +33746,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jack
+  m_Text: Dingo
 --- !u!222 &1568166559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35541,8 +35610,8 @@ RectTransform:
   - {fileID: 1325818884}
   - {fileID: 1057607598}
   - {fileID: 1398566048}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 5
+  m_Father: {fileID: 1228446524}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 60}
@@ -35631,7 +35700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3521df97cd137e489f60f6d02b46e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamMemberName: Brunhilde
+  TeamMemberName: Newton
+  Tier: 1
 --- !u!1 &1633812680
 GameObject:
   m_ObjectHideFlags: 0
@@ -37309,11 +37379,11 @@ RectTransform:
   - {fileID: 1166234954}
   - {fileID: 309734124}
   - {fileID: 1835996803}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 8
+  m_Father: {fileID: 1228446524}
+  m_RootOrder: 2
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -85, y: 60}
+  m_AnchoredPosition: {x: 162, y: 60}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1701355375
@@ -37399,7 +37469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3521df97cd137e489f60f6d02b46e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamMemberName: Dingo
+  TeamMemberName: Jack
+  Tier: 1
 --- !u!1001 &1702124691
 Prefab:
   m_ObjectHideFlags: 0
@@ -39510,7 +39581,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Defender
 --- !u!222 &1766020405
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40931,6 +41002,41 @@ Prefab:
   m_RootGameObject: {fileID: 1411777055}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1825061967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1825061968}
+  m_Layer: 8
+  m_Name: Tier3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1825061968
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1825061967}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2037935657}
+  - {fileID: 1562910566}
+  - {fileID: 2028894460}
+  m_Father: {fileID: 1026950483}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &1827518372
 GameObject:
   m_ObjectHideFlags: 0
@@ -41507,7 +41613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Soldier
 --- !u!222 &1835996805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41716,7 +41822,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: is a good shooter.
+  m_Text: Defender
 --- !u!222 &1839249614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45672,7 +45778,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rusty
+  m_Text: Siren
 --- !u!222 &2023520508
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45976,11 +46082,11 @@ RectTransform:
   - {fileID: 923650202}
   - {fileID: 859500193}
   - {fileID: 866231692}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 10
+  m_Father: {fileID: 1825061968}
+  m_RootOrder: 2
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -85, y: -60}
+  m_AnchoredPosition: {x: 162, y: -60}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2028894461
@@ -46067,6 +46173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TeamMemberName: Brutus
+  Tier: 3
 --- !u!1 &2032648355
 GameObject:
   m_ObjectHideFlags: 0
@@ -46221,11 +46328,11 @@ RectTransform:
   - {fileID: 549799793}
   - {fileID: 1568166557}
   - {fileID: 1839249612}
-  m_Father: {fileID: 1026950483}
-  m_RootOrder: 4
+  m_Father: {fileID: 1825061968}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 85, y: -60}
+  m_AnchoredPosition: {x: -162, y: -60}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2037935658
@@ -46311,7 +46418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3521df97cd137e489f60f6d02b46e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamMemberName: Jack
+  TeamMemberName: Dingo
+  Tier: 3
 --- !u!1 &2039843515
 GameObject:
   m_ObjectHideFlags: 0
@@ -47839,7 +47947,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Newton
+  m_Text: Brunhilde
 --- !u!222 &2130317021
 CanvasRenderer:
   m_ObjectHideFlags: 0
