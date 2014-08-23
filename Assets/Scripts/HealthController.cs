@@ -9,7 +9,7 @@ public class HealthController : MonoBehaviour
 
     void Start()
     {
-        //this.gameObject.GetComponent<UnitScript>().Name
+        GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetHealth(gameObject.GetComponent<UnitScript>().Name);
     }
 
     void Update()

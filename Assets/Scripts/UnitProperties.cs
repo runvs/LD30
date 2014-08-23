@@ -14,6 +14,9 @@ public class UnitProperties : MonoBehaviour
     {
     }
 
+
+
+
     public float Tank1_Health = 0.4f;
     public float Tank1_Attack = 0.1f;
     public float Tank1_Science = 0.1f;
@@ -37,7 +40,7 @@ public class UnitProperties : MonoBehaviour
 	public float Explorer2_Health = 0.2f;
     public float Explorer2_Attack = 0.2f;
     public float Explorer2_Science = 0.3f;
-	public string Explorer2_name = "Titus",
+    public string Explorer2_name = "Titus";
 	
 	public float Damage2_Health = 0.3f;
     public float Damage2_Attack = 0.4f;
@@ -58,4 +61,31 @@ public class UnitProperties : MonoBehaviour
     public float Damage3_Attack = 0.6f;
     public float Damage3_Science = 0.1f;
 	public string Damage3_name = "Brutus";
+
+
+    internal float GetHealth(string p)
+    {
+        if (p.Equals(Damage3_name))
+        {
+            return Damage3_Health;
+        }
+        else if (p.Equals(Damage2_name))
+        {
+            return Damage2_Health;
+        }
+
+        return 0;
+    }
+
+    internal float GetAttack(string p)
+    {
+
+        return 0;
+    }
+
+    internal float GetScience(string p)
+    {
+
+        return 0;
+    }
 }
