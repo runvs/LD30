@@ -10,6 +10,8 @@ public class HealthController : MonoBehaviour
     void Start()
     {
         GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetHealth(gameObject.GetComponent<UnitScript>().Name);
+        GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetAttack(gameObject.GetComponent<UnitScript>().Name);
+        GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetScience(gameObject.GetComponent<UnitScript>().Name);
     }
 
     void Update()

@@ -5,6 +5,7 @@ public class UnitScript : MonoBehaviour {
 
 
     private Vector3 TargetPosition;
+    private GameObject AttackTarget;
     private Rigidbody2D rgdb2d;
 
     public string Name;
@@ -34,6 +35,10 @@ public class UnitScript : MonoBehaviour {
             rgdb2d.velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 0.95f;
         }
 
+        if (AttackTarget)
+        {
+            AttackTarget.GetComponent<HealthController>().RemoveHealth(this.GetComponent<HealthController>().Attack);
+        }
         
 
         //if(rgdb2d.)
@@ -57,4 +62,16 @@ public class UnitScript : MonoBehaviour {
         Debug.Log(Name + " will Move to " + newPos);
         TargetPosition = newPos;
     }
+
+    internal void SetAttackTarget(GameObject target)
+    {
+        AttackTarget = target;
+    }
+
+    internal void PerformAttack
+    {
+
+    }
+
+
 }
