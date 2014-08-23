@@ -73,19 +73,117 @@ public class UnitProperties : MonoBehaviour
         {
             return Damage2_Health;
         }
-
+		else if (p.Equals(Damage1_name))
+        {
+            return Damage1_Health;
+        }
+		else if (p.Equals(Eplorer1_name))
+        {
+            return Explorer1_Health;
+        }
+		else if (p.Equals(Eplorer2_name))
+        {
+            return Explorer2_Health;
+        }
+		else if (p.Equals(Eplorer3_name))
+        {
+            return Explorer3_Health;
+        }
+		else if (p.Equals(Tank1_name))
+        {
+            return Tank1_Health;
+        }
+		else if (p.Equals(Tank2_name))
+        {
+            return Tank2_Health;
+        }
+		else if (p.Equals(Tank3_name))
+        {
+            return Tank3_Health;
+        }
         return 0;
     }
 
     internal float GetAttack(string p)
-    {
+	{
+		if (p.Equals(Damage3_name))
+        {
+            return Damage3_Attack;
+        }
+        else if (p.Equals(Damage2_name))
+        {
+            return Damage2_Health;
+        }
+		else if (p.Equals(Damage1_name))
+        {
+            return Damage1_Attack;
+        }
+		else if (p.Equals(Eplorer1_name))
+        {
+            return Explorer1_Health;
+        }
+		else if (p.Equals(Eplorer2_name))
+        {
+            return Explorer2_Attack;
+        }
+		else if (p.Equals(Eplorer3_name))
+        {
+            return Explorer3_Attack;
+        }
+		else if (p.Equals(Tank1_name))
+        {
+            return Tank1_Attack;
+        }
+		else if (p.Equals(Tank2_name))
+        {
+            return Tank2_Attack;
+        }
+		else if (p.Equals(Tank3_name))
+        {
+            return Tank3_Attack;
+        }
 
         return 0;
     }
 
     internal float GetScience(string p)
     {
-
-        return 0;
+		if (p.Equals(Damage3_name))
+        {
+            return Damage3_Sience;
+        }
+        else if (p.Equals(Damage2_name))
+        {
+            return Damage2_Sience;
+        }
+		else if (p.Equals(Damage1_name))
+        {
+            return Damage1_Sience;
+        }
+		else if (p.Equals(Eplorer1_name))
+        {
+            return Explorer1_Sience;
+        }
+		else if (p.Equals(Eplorer2_name))
+        {
+            return Explorer2_Sience;
+        }
+		else if (p.Equals(Eplorer3_name))
+        {
+            return Explorer3_Sience;
+        }
+		else if (p.Equals(Tank1_name))
+        {
+            return Tank1_Sience;
+        }
+		else if (p.Equals(Tank2_name))
+        {
+            return Tank2_Sience;
+        }
+		else if (p.Equals(Tank3_name))
+        {
+            return Tank3_Sience;
+        }
+	return 0;
     }
 }
