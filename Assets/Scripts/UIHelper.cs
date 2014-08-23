@@ -20,4 +20,9 @@ public class UIHelper : MonoBehaviour
             }
         }
     }
+
+    public void StartMission(string missionName)
+    {
+        Application.LoadLevel(missionName);
+    }
 }
