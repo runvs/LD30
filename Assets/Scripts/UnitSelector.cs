@@ -7,6 +7,7 @@ public class UnitSelector : MonoBehaviour {
 
     private List<string> SelectedUnits;
 
+
     public int NumberOfSelectedUnits()
     {
         return SelectedUnits.Count;

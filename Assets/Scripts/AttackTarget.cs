@@ -18,7 +18,6 @@ public class AttackTarget : MonoBehaviour {
 
     void OnMouseDown()
     {
-
         Debug.Log("You clicked Enemy!");
 
         GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().SetAttacker(this.gameObject);
@@ -26,4 +25,9 @@ public class AttackTarget : MonoBehaviour {
         
     }
 
+
+    internal void PushBack(Vector3 direction, float AttackAttribute)
+    {
+        this.GetComponent<Rigidbody2D>().AddForce(direction * AttackAttribute * GameProperties.AttackPushBackForceFactor);
+    }
 }

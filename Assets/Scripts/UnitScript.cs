@@ -6,7 +6,12 @@ public class UnitScript : MonoBehaviour {
 
     private Vector3 TargetPosition;
     public GameObject AttackTarget;
-    private Rigidbody2D rgdb2d;
+
+    private float AttackTimer;
+
+    private float AttackRange = 4.0f;
+
+    private Rigidbody2D rgdb2d; // for  easy writing
 
     public string Name;
     // Use this for initialization
@@ -35,6 +40,19 @@ public class UnitScript : MonoBehaviour {
     // Update is called once per frame
     void Update () 
     {
+
+        if (AttackTimer > 0.0f)
+        {
+            AttackTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (AttackTarget)
+            {
+                PerformAttack();
+            }
+        }
+
         Vector3 CurrentPosition = gameObject.transform.position;
         Vector3 difference = (TargetPosition - CurrentPosition);
         if (difference.magnitude >= 0.5f)
@@ -47,10 +65,7 @@ public class UnitScript : MonoBehaviour {
             rgdb2d.velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 0.95f;
         }
 
-        if (AttackTarget)
-        {
-            PerformAttack();
-        }
+       
         
 
         //if(rgdb2d.)
@@ -84,8 +99,25 @@ public class UnitScript : MonoBehaviour {
     {
         if (AttackTarget)
         {
-            AttackTarget.GetComponent<HealthController>().RemoveHealth(this.GetComponent<HealthController>().Attack);
+            Vector3 direction = (AttackTarget.transform.position - this.transform.position);
+            if (IsInRange(direction))
+            {
+                float Damage = AttributeConverter.GetAttackDamageFromAttribute(this.GetComponent<HealthController>().Attribute_Attack, false);
+                AttackTarget.GetComponent<HealthController>().RemoveHealth(Damage);
+                AttackTimer += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
+                AttackTarget.GetComponent<AttackTarget>().PushBack(direction.normalized, this.GetComponent<HealthController>().Attribute_Attack);
+            }
+            else
+            {
+                TargetPosition = this.transform.position + direction * 0.25f; 
+            }
         }
+    }
+
+    private bool IsInRange(Vector3 direction)
+    {
+        bool retVal = direction.magnitude <= AttackRange;
+        return retVal;        
     }
 
 
