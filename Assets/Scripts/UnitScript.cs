@@ -26,7 +26,7 @@ public class UnitScript : MonoBehaviour {
     private void RemoveAttackTarget(string name)
     {
 
-        if (this.AttackTarget.GetComponent<AttackTarget>() && this.AttackTarget.GetComponent<AttackTarget>().name.Equals(name))
+        if (this.AttackTarget && this.AttackTarget.GetComponent<AttackTarget>() != null && this.AttackTarget.GetComponent<AttackTarget>().Name.Equals(name))
         {
             this.AttackTarget = null;
         }
@@ -66,7 +66,7 @@ public class UnitScript : MonoBehaviour {
         {
             rgdb2d.velocity = this.GetComponent<Rigidbody2D>().velocity.normalized * GameProperties.UnitMaxVelocity;
         }
-        Debug.Log(rgdb2d.velocity);
+        //Debug.Log(rgdb2d.velocity);
     }
 
     internal void SetTargetPosition(Vector3 newPos)

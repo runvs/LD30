@@ -10,7 +10,7 @@ public class AttackTargetEventManager : MonoBehaviour {
     {
         if(OnDelete != null)
         {
-            //OnDelete(name);
+            OnDelete(name);
         }
     }
 
