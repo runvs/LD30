@@ -33,6 +33,10 @@ public class UnitScript : MonoBehaviour {
         {
             rgdb2d.velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 0.95f;
         }
+
+        
+
+        //if(rgdb2d.)
         CapVelocity();
     }
 

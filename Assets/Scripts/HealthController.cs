@@ -4,33 +4,36 @@ using UnityEngine;
 public class HealthController : MonoBehaviour
 {
     public float Health;
+    public float Attack;
+    public float Science;
 
     void Start()
     {
-        this.gameObject.GetComponent<UnitScript>().Name
+        //this.gameObject.GetComponent<UnitScript>().Name
     }
 
     void Update()
     {
+        CheckDead();
+    }
+
+    private void CheckDead()
+    {
         if (Health <= 0.0f)
         {
-            if (this.tag == "Player")
-            {
-                ResetGame();
-            }
-
             Destroy(this.gameObject);
         }
     }
 
-
-
-    public void ResetGame()
+    public void RemoveHealth(float value)
     {
-        Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
-        Destroy(GameObject.FindGameObjectWithTag("bgm"));
-        Destroy(GameObject.FindGameObjectWithTag("StoryManager"));
-
-        //Application.LoadLevel("Menu");
+        Health -= value;
+        CheckDead();
     }
+    public float GetHealth ()
+    {
+        return Health;
+    }
+
+    
 }
