@@ -7,6 +7,11 @@ public class UnitSelector : MonoBehaviour {
 
     private List<string> SelectedUnits;
 
+    public int NumberOfSelectedUnits()
+    {
+        return SelectedUnits.Count;
+    }
+
     public float InputTimer = 0;
 
 
@@ -70,4 +75,24 @@ public class UnitSelector : MonoBehaviour {
     }
 
 
+
+    internal void SetAttacker(GameObject gameObject)
+    {
+        if (NumberOfSelectedUnits() != 0)
+        {
+            GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+
+            foreach (var s in SelectedUnits)
+            {
+                foreach (var o in units)
+                {
+                    UnitScript u = o.GetComponent<UnitScript>();
+                    if (u.Name == s)
+                    {
+                        u.SetAttackTarget(gameObject);
+                    }
+                }
+            }
+        }
+    }
 }

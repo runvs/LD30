@@ -5,7 +5,7 @@ public class UnitScript : MonoBehaviour {
 
 
     private Vector3 TargetPosition;
-    private GameObject AttackTarget;
+    public GameObject AttackTarget;
     private Rigidbody2D rgdb2d;
 
     public string Name;
@@ -17,6 +17,18 @@ public class UnitScript : MonoBehaviour {
         if (!rgdb2d)
         {
             throw new UnityException("No Rigidbody2d");
+        }
+
+        AttackTargetEventManager.OnDelete += RemoveAttackTarget;
+
+    }
+
+    private void RemoveAttackTarget(string name)
+    {
+
+        if (this.AttackTarget.GetComponent<AttackTarget>() && this.AttackTarget.GetComponent<AttackTarget>().name.Equals(name))
+        {
+            this.AttackTarget = null;
         }
     }
     
@@ -37,7 +49,7 @@ public class UnitScript : MonoBehaviour {
 
         if (AttackTarget)
         {
-            AttackTarget.GetComponent<HealthController>().RemoveHealth(this.GetComponent<HealthController>().Attack);
+            PerformAttack();
         }
         
 
@@ -68,9 +80,12 @@ public class UnitScript : MonoBehaviour {
         AttackTarget = target;
     }
 
-    internal void PerformAttack
+    internal void PerformAttack()
     {
-
+        if (AttackTarget)
+        {
+            AttackTarget.GetComponent<HealthController>().RemoveHealth(this.GetComponent<HealthController>().Attack);
+        }
     }
 
 
