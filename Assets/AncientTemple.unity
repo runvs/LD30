@@ -16053,6 +16053,7 @@ GameObject:
   - 212: {fileID: 314492939}
   - 114: {fileID: 314492938}
   - 61: {fileID: 314492937}
+  - 114: {fileID: 314492940}
   m_Layer: 14
   m_Name: tile_templealter
   m_TagString: Tiles_Foreground
@@ -16120,6 +16121,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ad2906a659630f74b9cbe309fd1404c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &314492940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314492935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6179a22c9adbfa4b9e3b6ddba3ce5f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Finished: 0
 --- !u!1001 &314966089
 Prefab:
   m_ObjectHideFlags: 0
@@ -26939,7 +26952,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523769825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.90110016, y: -18.8810005, z: -10}
+  m_LocalPosition: {x: 14.0220003, y: -1.12100005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43202,11 +43215,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: eaac5bebd50492c49a203ba16a7c720d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.68236613
+      value: 13.7349997
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eaac5bebd50492c49a203ba16a7c720d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -19.4951134
+      value: -1.14830005
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eaac5bebd50492c49a203ba16a7c720d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -55531,6 +55544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackTarget: {fileID: 0}
+  AltarTarget: {fileID: 0}
   Name: Newton
 --- !u!61 &1134775031
 BoxCollider2D:
@@ -55586,7 +55600,7 @@ Transform:
   m_PrefabInternal: {fileID: 884921596}
   m_GameObject: {fileID: 1134775027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.68236613, y: -19.4951134, z: 0}
+  m_LocalPosition: {x: 13.7349997, y: -1.14830005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90570,6 +90584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackTarget: {fileID: 0}
+  AltarTarget: {fileID: 0}
   Name: Arthur
 --- !u!61 &1822628973
 BoxCollider2D:

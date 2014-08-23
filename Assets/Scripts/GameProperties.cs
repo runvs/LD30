@@ -15,4 +15,6 @@ public static class GameProperties
 
     public static float EnemyMoveFactor { get { return 7.0f  ; } }
     public static float EnemyAttackTimerMax { get { return 1.1f; } }
+
+    public static float UnitAltarDefusionTime { get { return 10.0f;} }
 }

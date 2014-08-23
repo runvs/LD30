@@ -5,11 +5,14 @@ public class UnitScript : MonoBehaviour {
 
 
     private Vector3 TargetPosition;
+
     public GameObject AttackTarget;
-
-    private float AttackTimer;
-
+    private float AttackTimerRemaining;
     private float AttackRange = 4.0f;
+
+    public GameObject AltarTarget;
+    private float AltarTimeRemaining;
+
 
     private Rigidbody2D rgdb2d; // for  easy writing
 
@@ -41,9 +44,9 @@ public class UnitScript : MonoBehaviour {
     void Update () 
     {
 
-        if (AttackTimer > 0.0f)
+        if (AttackTimerRemaining > 0.0f)
         {
-            AttackTimer -= Time.deltaTime;
+            AttackTimerRemaining -= Time.deltaTime;
         }
         else
         {
@@ -52,6 +55,16 @@ public class UnitScript : MonoBehaviour {
                 PerformAttack();
             }
         }
+
+        if (AltarTimeRemaining > 0)
+        {
+            AltarTimeRemaining -= Time.deltaTime / AttributeConverter.GetScienceTimeFactorFromAttribute(GetComponent<HealthController>().Attribute_Science, false);
+            if (AltarTimeRemaining <= 0)
+            {
+                AltarTarget.GetComponent<AltarAction>().SetFinished();
+            }
+        }
+
 
         Vector3 CurrentPosition = gameObject.transform.position;
         Vector3 difference = (TargetPosition - CurrentPosition);
@@ -88,6 +101,9 @@ public class UnitScript : MonoBehaviour {
     {
         //Debug.Log(Name + " will Move to " + newPos);
         TargetPosition = newPos;
+
+        // reset Attack Target so you can run away from enemies if needed
+        AttackTarget = null;
     }
 
     internal void SetAttackTarget(GameObject target)
@@ -102,7 +118,7 @@ public class UnitScript : MonoBehaviour {
             Vector3 direction = (AttackTarget.transform.position - this.transform.position);
             if (IsInRange(direction))
             {
-                AttackTimer += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
+                AttackTimerRemaining += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
                 if (AttackTarget)
                 {
                     GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position + direction * 0.25f, direction.normalized, AttackTarget, this.gameObject);
@@ -122,4 +138,10 @@ public class UnitScript : MonoBehaviour {
     }
 
 
+
+    internal void SetAltar(GameObject altar)
+    {
+        this.AltarTarget = altar;
+        this.AltarTimeRemaining = GameProperties.UnitAltarDefusionTime;
+    }
 }
