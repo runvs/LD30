@@ -13,14 +13,13 @@ public class TeamSelection : MonoBehaviour
 
     public void CheckTeamMembers(bool added)
     {
-        if (added && TeamController.SelectedTeamMembers.Count < 3)
+        if (added && GameController.SelectedTeamMembers.Count < 3)
         {
-            TeamController.SelectedTeamMembers.Add(TeamMemberName);
-            Debug.Log(TeamMemberName);
+            GameController.SelectedTeamMembers.Add(TeamMemberName);
         }
         else if (!added)
         {
-            TeamController.SelectedTeamMembers.Remove(TeamMemberName);
+            GameController.SelectedTeamMembers.Remove(TeamMemberName);
         }
         else
         {

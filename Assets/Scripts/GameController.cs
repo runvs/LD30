@@ -1,15 +1,16 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
+    public static List<string> SelectedTeamMembers = new List<string>();
 
-    // Use this for initialization
-    void Start () {
-    
+    void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
-    
-    // Update is called once per frame
-    void Update () 
+
+    void Update()
     {
         GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
 
@@ -17,7 +18,7 @@ public class GameController : MonoBehaviour {
         {
             ResetGame();
         }
-    
+
     }
 
     public void ResetGame()
