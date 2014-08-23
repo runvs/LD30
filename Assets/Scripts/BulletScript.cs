@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletScript : MonoBehaviour 
 {
-
+    public GameObject Shooter;
     public GameObject AttackTarget;
     private float LifeTime;
     public float Damage;
@@ -52,12 +52,21 @@ public class BulletScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        
         if (coll.gameObject.tag == "BadGuys")
         {
             //Debug.Log("Coll");
             coll.collider.GetComponent<HealthController>().RemoveHealth(Damage);
-            coll.collider.GetComponent<AttackTarget>().PushBack(this.GetComponent<Rigidbody2D>().velocity.normalized);
+            coll.collider.gameObject.GetComponent<EnemyAttacker>().SetTarget(Shooter);
+            //coll.collider.GetComponent<AttackTarget>().PushBack(this.GetComponent<Rigidbody2D>().velocity.normalized);
+            Destroy(this.gameObject);
+
+        }
+        else if (coll.collider.tag == "Units")
+        {
+            // hurt your Teammate?
+        }
+        else
+        {
             Destroy(this.gameObject);
         }
     }

@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 98f3abbccb8b1904baa64e29fd41ce61
+guid: ad2906a659630f74b9cbe309fd1404c4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: grass2
+    21300000: tile_templealtar
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

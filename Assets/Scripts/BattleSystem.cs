@@ -7,6 +7,7 @@ public class BattleSystem : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        DontDestroyOnLoad(this.gameObject);
     
     }
     
@@ -16,13 +17,13 @@ public class BattleSystem : MonoBehaviour {
     }
 
 
-    public void SpawnShot1(Vector3 position, Vector3 velocity, GameObject Target, float Damage)
+    public void SpawnShot1(Vector3 position, Vector3 velocity, GameObject Target, GameObject Shooter)
     {
         GameObject Bullet = Instantiate(Bullet1, position, new Quaternion()) as GameObject;
-        Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x, velocity.y);
-
+        Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(velocity.x, velocity.y) * GameProperties.BulletSpeedFactor;
+        Bullet.GetComponent<BulletScript>().Shooter = Shooter;
         Bullet.GetComponent<BulletScript>().AttackTarget = Target;
-        Bullet.GetComponent<BulletScript>().Damage = Damage;
+        Bullet.GetComponent<BulletScript>().Damage = AttributeConverter.GetAttackDamageFromAttribute(Shooter.GetComponent<HealthController>().Attribute_Attack, false);
         Bullet.transform.parent = GameObject.FindGameObjectWithTag("ShotGroup").transform;
     }
 

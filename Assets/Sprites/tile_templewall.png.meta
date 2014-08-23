@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 98f3abbccb8b1904baa64e29fd41ce61
+guid: 8658671d66511c246a42c345ed455cca
 TextureImporter:
   fileIDToRecycleName:
-    21300000: grass2
+    21300000: tile_templewall
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

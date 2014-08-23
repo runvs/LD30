@@ -86,7 +86,7 @@ public class UnitScript : MonoBehaviour {
 
     internal void SetTargetPosition(Vector3 newPos)
     {
-        Debug.Log(Name + " will Move to " + newPos);
+        //Debug.Log(Name + " will Move to " + newPos);
         TargetPosition = newPos;
     }
 
@@ -102,9 +102,8 @@ public class UnitScript : MonoBehaviour {
             Vector3 direction = (AttackTarget.transform.position - this.transform.position);
             if (IsInRange(direction))
             {
-                float Damage = AttributeConverter.GetAttackDamageFromAttribute(this.GetComponent<HealthController>().Attribute_Attack, false);
                 AttackTimer += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
-                GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position + direction * 0.25f, direction, AttackTarget, Damage);
+                GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position + direction * 0.25f, direction.normalized, AttackTarget, this.gameObject);
             }
             else
             {
