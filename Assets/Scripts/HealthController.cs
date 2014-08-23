@@ -12,12 +12,17 @@ public class HealthController : MonoBehaviour
 
     void Start()
     {
+        //GetVariables(gameObject.GetComponent<UnitScript>().Name);
+    }
+
+    public void GetVariables(string Name)
+    {
         if (this.tag == "Units")
         {
-            this.Attribute_Health = GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetHealth(gameObject.GetComponent<UnitScript>().Name);
-            this.Attribute_Attack = GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetAttack(gameObject.GetComponent<UnitScript>().Name);
-            this.Attribute_Science = GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetScience(gameObject.GetComponent<UnitScript>().Name);
-            
+            this.Attribute_Health = GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetHealth(Name);
+            this.Attribute_Attack = GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetAttack(Name);
+            this.Attribute_Science = GameObject.FindGameObjectWithTag("UnitProperties").GetComponent<UnitProperties>().GetScience(Name);
+
         }
         else
         {
@@ -25,10 +30,8 @@ public class HealthController : MonoBehaviour
             this.Attribute_Attack = 1;
             this.Attribute_Science = 1;
         }
-
         CurrenteHealth = AttributeConverter.GetMaxHealthFromAttribute(Attribute_Health, this.tag != "Units");
         HealthMax = AttributeConverter.GetMaxHealthFromAttribute(Attribute_Health, this.tag != "Units");
-
     }
 
     void Update()

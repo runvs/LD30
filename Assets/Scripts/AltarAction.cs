@@ -31,6 +31,10 @@ public class AltarAction : MonoBehaviour {
     internal void SetFinished()
     {
         Debug.Log("Altar is finished.");
+        foreach (GameObject u in GameObject.FindGameObjectsWithTag("Units"))
+        {
+            Destroy(u);
+        }
         Application.LoadLevel("Headquarters");
         Finished = true;
     }

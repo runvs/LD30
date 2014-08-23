@@ -29,6 +29,8 @@ public class UnitScript : MonoBehaviour {
 
         AttackTargetEventManager.OnDelete += RemoveAttackTarget;
 
+        DontDestroyOnLoad(this.gameObject);
+
     }
 
     private void RemoveAttackTarget(string name)
