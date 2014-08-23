@@ -21762,6 +21762,33 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d51d070077f0a694d8e8c901613d733e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &415683464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+  m_PrefabInternal: {fileID: 764597466}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 415683465}
+  m_Layer: 0
+  m_Name: ShotGroup
+  m_TagString: ShotGroup
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &415683465
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+  m_PrefabInternal: {fileID: 764597466}
+  m_GameObject: {fileID: 415683464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.44067574, y: -15.3945484, z: -3.84866714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &416283842
 GameObject:
   m_ObjectHideFlags: 0
@@ -37772,6 +37799,50 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d51d070077f0a694d8e8c901613d733e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &764597466
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.44067574
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -15.3945484
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.84866714
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d187114edb6d4c3448f1ec99b6adb693, type: 2}
+  m_RootGameObject: {fileID: 415683464}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1001 &767391654
 Prefab:
   m_ObjectHideFlags: 0
@@ -55322,7 +55393,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1936451403}
   m_GameObject: {fileID: 1131762424}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4caed9e9d806406478eb3fbdb4079963, type: 3}
   m_Name: 
@@ -71907,6 +71978,10 @@ Prefab:
     - target: {fileID: 400000, guid: 26ae87e9c648c7e43a03e1959f875cb1, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 26ae87e9c648c7e43a03e1959f875cb1, type: 2}
+      propertyPath: Name
+      value: badguy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26ae87e9c648c7e43a03e1959f875cb1, type: 2}
@@ -96213,6 +96288,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c08b6a6aab8858548a5e7f35c5844aca, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c08b6a6aab8858548a5e7f35c5844aca, type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

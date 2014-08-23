@@ -44,7 +44,7 @@ public class HealthController : MonoBehaviour
             Destroy(this.gameObject);
             if (this.tag == "Units")
             {
-
+                UnitTargetEvenetManager.Call(this.gameObject.GetComponent<UnitScript>().Name);
             }
             else
             {

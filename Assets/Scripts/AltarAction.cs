@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
-public class AttackTarget : MonoBehaviour {
+public class AltarAction : MonoBehaviour {
 
-    public string Name;
     // Use this for initialization
     void Start () 
     {
-        Name = Guid.NewGuid().ToString();
+    
     }
     
     // Update is called once per frame
@@ -19,14 +17,8 @@ public class AttackTarget : MonoBehaviour {
 
     void OnMouseDown()
     {
-        Debug.Log("You clicked Enemy!");
+        Debug.Log("You clicked Altar!");
         GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().SetAttackTarget(this.gameObject);
         GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.5f;
     }
-
-    internal void PushBack(Vector3 direction)
-    {
-        this.GetComponent<Rigidbody2D>().AddForce(direction * 1.0f * GameProperties.AttackPushBackForceFactor);
-    }
-
 }

@@ -11,7 +11,15 @@ public class UnitSelector : MonoBehaviour {
     public int NumberOfSelectedUnits()
     {
         return SelectedUnits.Count;
-        //UnitTargetEvenetManager.OnDelete += RemoveFrom
+        
+    }
+
+    private void RemoveFromSelection(string name)
+    {
+        if(SelectedUnits.Contains(name))
+        {
+            SelectedUnits.Remove(name);
+        }
     }
 
     public float InputTimer = 0;
@@ -21,6 +29,7 @@ public class UnitSelector : MonoBehaviour {
     void Start () 
     {
         SelectedUnits = new List<string>();
+        UnitTargetEvenetManager.OnDelete += RemoveFromSelection;
     }
     
     // Update is called once per frame
@@ -78,7 +87,7 @@ public class UnitSelector : MonoBehaviour {
 
 
 
-    internal void SetAttacker(GameObject gameObject)
+    internal void SetAttackTarget(GameObject gameObject)
     {
         if (NumberOfSelectedUnits() != 0)
         {
@@ -95,6 +104,16 @@ public class UnitSelector : MonoBehaviour {
                     }
                 }
             }
+        }
+    }
+
+    internal void SetAltar(GameObject altar)
+    {
+        if (NumberOfSelectedUnits() != 0)
+        {
+            GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+
+            units[0].GetComponent<UnitScript>().SetAltar(altar);
         }
     }
 }

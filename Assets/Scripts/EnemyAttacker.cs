@@ -13,7 +13,13 @@ public class EnemyAttacker : MonoBehaviour
     void Start () 
     {
         rgdb2d = this.gameObject.GetComponent<Rigidbody2D>();
+        UnitTargetEvenetManager.OnDelete += RemoveTarget;
 
+    }
+
+    private void RemoveTarget(string name)
+    {
+        Target = null;
     }
     
     // Update is called once per frame
