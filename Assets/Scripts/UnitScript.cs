@@ -103,9 +103,8 @@ public class UnitScript : MonoBehaviour {
             if (IsInRange(direction))
             {
                 float Damage = AttributeConverter.GetAttackDamageFromAttribute(this.GetComponent<HealthController>().Attribute_Attack, false);
-                AttackTarget.GetComponent<HealthController>().RemoveHealth(Damage);
                 AttackTimer += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
-                AttackTarget.GetComponent<AttackTarget>().PushBack(direction.normalized, this.GetComponent<HealthController>().Attribute_Attack);
+                GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position + direction * 0.25f, direction, AttackTarget, Damage);
             }
             else
             {

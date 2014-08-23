@@ -25,9 +25,9 @@ public class AttackTarget : MonoBehaviour {
         
     }
 
-
-    internal void PushBack(Vector3 direction, float AttackAttribute)
+    internal void PushBack(Vector3 direction)
     {
-        this.GetComponent<Rigidbody2D>().AddForce(direction * AttackAttribute * GameProperties.AttackPushBackForceFactor);
+        this.GetComponent<Rigidbody2D>().AddForce(direction * 1.0f * GameProperties.AttackPushBackForceFactor);
     }
+
 }

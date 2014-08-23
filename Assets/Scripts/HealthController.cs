@@ -55,6 +55,7 @@ public class HealthController : MonoBehaviour
 
     public void RemoveHealth(float value)
     {
+        //Debug.Log("RemoveHealth");
         CurrenteHealth -= value;
         CheckDead();
     }
