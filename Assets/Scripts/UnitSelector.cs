@@ -46,7 +46,10 @@ public class UnitSelector : MonoBehaviour {
                             UnitScript u = o.GetComponent<UnitScript>();
                             if (u.Name == s)
                             {
-                                u.SetTargetPosition(Input.mousePosition);
+                                Vector3 v3 = Input.mousePosition;
+                                v3.z = 10.0f;
+                                v3 = Camera.main.ScreenToWorldPoint(v3);
+                                u.SetTargetPosition(v3);
                             }
                         }
                     }
