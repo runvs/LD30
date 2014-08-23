@@ -4,6 +4,10 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static List<string> SelectedTeamMembers = new List<string>();
+    public static bool Tier2Available = false;
+    public static bool Tier3Available = false;
+
+    private bool _isAtBase = true;
 
     void Start()
     {
@@ -12,11 +16,14 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
-
-        if (units.Length == 0)
+        if (!_isAtBase)
         {
-            ResetGame();
+            GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+
+            if (units.Length == 0)
+            {
+                ResetGame();
+            }
         }
 
     }
