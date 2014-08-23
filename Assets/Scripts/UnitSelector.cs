@@ -7,9 +7,11 @@ public class UnitSelector : MonoBehaviour {
 
     private List<string> SelectedUnits;
 
+
     public int NumberOfSelectedUnits()
     {
         return SelectedUnits.Count;
+        //UnitTargetEvenetManager.OnDelete += RemoveFrom
     }
 
     public float InputTimer = 0;

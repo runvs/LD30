@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackTargetEventManager : MonoBehaviour {
+public class UnitTargetEvenetManager : MonoBehaviour {
 
-    public delegate void DeleteAttackTarget(string name);
-    public static event DeleteAttackTarget OnDelete;
+    public delegate void DeleteUnitTarget(string name);
+    public static event DeleteUnitTarget OnDelete;
 
     // Use this for initialization
     void Start()
@@ -15,7 +15,7 @@ public class AttackTargetEventManager : MonoBehaviour {
 
     public static void Call(string name)
     {
-        if(OnDelete != null)
+        if (OnDelete != null)
         {
             OnDelete(name);
         }

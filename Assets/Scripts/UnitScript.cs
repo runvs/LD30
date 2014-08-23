@@ -6,7 +6,12 @@ public class UnitScript : MonoBehaviour {
 
     private Vector3 TargetPosition;
     public GameObject AttackTarget;
-    private Rigidbody2D rgdb2d;
+
+    private float AttackTimer;
+
+    private float AttackRange = 4.0f;
+
+    private Rigidbody2D rgdb2d; // for  easy writing
 
     public string Name;
     // Use this for initialization
@@ -26,7 +31,7 @@ public class UnitScript : MonoBehaviour {
     private void RemoveAttackTarget(string name)
     {
 
-        if (this.AttackTarget.GetComponent<AttackTarget>() && this.AttackTarget.GetComponent<AttackTarget>().name.Equals(name))
+        if (this.AttackTarget && this.AttackTarget.GetComponent<AttackTarget>() != null && this.AttackTarget.GetComponent<AttackTarget>().Name.Equals(name))
         {
             this.AttackTarget = null;
         }
@@ -35,6 +40,19 @@ public class UnitScript : MonoBehaviour {
     // Update is called once per frame
     void Update () 
     {
+
+        if (AttackTimer > 0.0f)
+        {
+            AttackTimer -= Time.deltaTime;
+        }
+        else
+        {
+            if (AttackTarget)
+            {
+                PerformAttack();
+            }
+        }
+
         Vector3 CurrentPosition = gameObject.transform.position;
         Vector3 difference = (TargetPosition - CurrentPosition);
         if (difference.magnitude >= 0.5f)
@@ -47,10 +65,7 @@ public class UnitScript : MonoBehaviour {
             rgdb2d.velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 0.95f;
         }
 
-        if (AttackTarget)
-        {
-            PerformAttack();
-        }
+       
         
 
         //if(rgdb2d.)
@@ -66,12 +81,12 @@ public class UnitScript : MonoBehaviour {
         {
             rgdb2d.velocity = this.GetComponent<Rigidbody2D>().velocity.normalized * GameProperties.UnitMaxVelocity;
         }
-        Debug.Log(rgdb2d.velocity);
+        //Debug.Log(rgdb2d.velocity);
     }
 
     internal void SetTargetPosition(Vector3 newPos)
     {
-        Debug.Log(Name + " will Move to " + newPos);
+        //Debug.Log(Name + " will Move to " + newPos);
         TargetPosition = newPos;
     }
 
@@ -84,8 +99,23 @@ public class UnitScript : MonoBehaviour {
     {
         if (AttackTarget)
         {
-            AttackTarget.GetComponent<HealthController>().RemoveHealth(this.GetComponent<HealthController>().Attack);
+            Vector3 direction = (AttackTarget.transform.position - this.transform.position);
+            if (IsInRange(direction))
+            {
+                AttackTimer += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
+                GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position + direction * 0.25f, direction.normalized, AttackTarget, this.gameObject);
+            }
+            else
+            {
+                TargetPosition = this.transform.position + direction * 0.25f; 
+            }
         }
+    }
+
+    private bool IsInRange(Vector3 direction)
+    {
+        bool retVal = direction.magnitude <= AttackRange;
+        return retVal;        
     }
 
 
