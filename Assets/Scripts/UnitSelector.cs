@@ -19,17 +19,12 @@ public class UnitSelector : MonoBehaviour {
     // Update is called once per frame
     void Update () 
     {
-
         if (InputTimer > 0)
         {
             InputTimer -= Time.deltaTime;
         }
         else
         {
-            //foreach (var s in SelectedUnits)
-            //{
-            //    //Debug.Log(s);
-            //}
             if (Input.GetMouseButtonUp(0))
             {
                 if (SelectedUnits.Count != 0)
@@ -37,7 +32,6 @@ public class UnitSelector : MonoBehaviour {
                     InputTimer += 0.5f;
 
                     GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
-
 
                     foreach (var s in SelectedUnits)
                     {
@@ -53,7 +47,6 @@ public class UnitSelector : MonoBehaviour {
                             }
                         }
                     }
-
                 }
             }
             if (Input.GetMouseButtonUp(1))
