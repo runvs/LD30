@@ -57,7 +57,7 @@ public class AltarAction : MonoBehaviour
         gc.FoundArtefacts += GameProperties.FoundArtifactReward;
         gc.MoneyAdd(GameProperties.FoundArtifactReward);
 
-        gc.ResearchPoints += 15;
+        gc.GainedResearchPoints += 15;
         gc.ResearchPointsAdd(15);
 
 

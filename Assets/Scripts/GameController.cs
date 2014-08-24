@@ -119,8 +119,8 @@ public class GameController : MonoBehaviour
 
     public void ResetGame()
     {
-        Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
-        Destroy(GameObject.FindGameObjectWithTag("bgm"));
+        //Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
+        //Destroy(GameObject.FindGameObjectWithTag("bgm"));     // startet schon im Menu
 
         IsAtBase = true;
 
