@@ -55,7 +55,7 @@ public class BulletScript : MonoBehaviour
         if (coll.gameObject.tag == "BadGuys")
         {
             //Debug.Log("Coll");
-            coll.collider.GetComponent<HealthController>().RemoveHealth(Damage);
+            coll.collider.GetComponent<HealthController>().TakeDamage(Damage);
             coll.collider.gameObject.GetComponent<EnemyAttacker>().SetTarget(Shooter);
             //coll.collider.GetComponent<AttackTarget>().PushBack(this.GetComponent<Rigidbody2D>().velocity.normalized);
             Destroy(this.gameObject);

@@ -158,5 +158,7 @@ public class UnitScript : MonoBehaviour {
     {
         this.AltarTarget = altar;
         this.AltarTimeRemaining = GameProperties.UnitAltarDefusionTime;
+
+        this.TargetPosition = altar.transform.position; // walk to the altar
     }
 }

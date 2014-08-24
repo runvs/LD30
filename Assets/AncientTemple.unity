@@ -321,50 +321,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d51d070077f0a694d8e8c901613d733e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1001 &6531094
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -6.33760023
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -4.06619978
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-  m_RootGameObject: {fileID: 1734945259}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1001 &7306106
 Prefab:
   m_ObjectHideFlags: 0
@@ -3538,7 +3494,7 @@ GameObject:
   - 61: {fileID: 73321621}
   - 50: {fileID: 73321620}
   - 114: {fileID: 73321619}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
@@ -3650,7 +3606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1001 &74563021
 Prefab:
   m_ObjectHideFlags: 0
@@ -14312,7 +14268,7 @@ GameObject:
   - 61: {fileID: 277785331}
   - 50: {fileID: 277785330}
   - 114: {fileID: 277785329}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
@@ -14424,7 +14380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &279536793
 GameObject:
   m_ObjectHideFlags: 0
@@ -21801,7 +21757,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &416283842
 GameObject:
   m_ObjectHideFlags: 0
@@ -26956,7 +26912,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &523769831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44939,7 +44895,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &926296016
 GameObject:
   m_ObjectHideFlags: 0
@@ -63059,7 +63015,7 @@ Transform:
   - {fileID: 467500875}
   - {fileID: 1924473294}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &1268790833
 GameObject:
   m_ObjectHideFlags: 0
@@ -85277,82 +85233,6 @@ Prefab:
   m_RootGameObject: {fileID: 1678844831}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &1734945259
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-  m_PrefabInternal: {fileID: 6531094}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1734945261}
-  - 114: {fileID: 1734945260}
-  m_Layer: 0
-  m_Name: UnitProperties
-  m_TagString: UnitProperties
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1734945260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: cf6967a01384cf2428273a952abb5996,
-    type: 2}
-  m_PrefabInternal: {fileID: 6531094}
-  m_GameObject: {fileID: 1734945259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 241bd9de150b7894caf05a8f971e74a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tank1_Health: .400000006
-  Tank1_Attack: .100000001
-  Tank1_Science: .100000001
-  Tank1_name: Arthur
-  Explorer1_Health: .200000003
-  Explorer1_Attack: .100000001
-  Explorer1_Science: .400000006
-  Explorer1_name: Newton
-  Damage1_Health: .200000003
-  Damage1_Attack: .5
-  Damage1_Science: .200000003
-  Damage1_name: Jack
-  Tank2_Health: .5
-  Tank2_Attack: .200000003
-  Tank2_Science: .100000001
-  Tank2_name: Brunhilde
-  Explorer2_Health: .200000003
-  Explorer2_Attack: .200000003
-  Explorer2_Science: .300000012
-  Explorer2_name: Titus
-  Damage2_Health: .300000012
-  Damage2_Attack: .400000006
-  Damage2_Science: .100000001
-  Damage2_name: Rusty
-  Tank3_Health: .600000024
-  Tank3_Attack: .200000003
-  Tank3_Science: .100000001
-  Tank3_name: Dingo
-  Explorer3_Health: .100000001
-  Explorer3_Attack: .200000003
-  Explorer3_Science: .600000024
-  Explorer3_name: Siren
-  Damage3_Health: .200000003
-  Damage3_Attack: .600000024
-  Damage3_Science: .100000001
-  Damage3_name: Brutus
---- !u!4 &1734945261
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: cf6967a01384cf2428273a952abb5996, type: 2}
-  m_PrefabInternal: {fileID: 6531094}
-  m_GameObject: {fileID: 1734945259}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.33760023, y: -4.06619978, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
 --- !u!1 &1736258925
 GameObject:
   m_ObjectHideFlags: 0
@@ -97983,7 +97863,7 @@ GameObject:
   - 61: {fileID: 2000858936}
   - 50: {fileID: 2000858935}
   - 114: {fileID: 2000858934}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
@@ -98095,7 +97975,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1001 &2002126737
 Prefab:
   m_ObjectHideFlags: 0

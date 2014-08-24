@@ -75,7 +75,7 @@ public class EnemyAttacker : MonoBehaviour
             if (coll.collider.tag == "Units")
             {
                 Debug.Log("Attack Unit!");
-                Target.GetComponent<HealthController>().RemoveHealth(AttributeConverter.GetAttackDamageFromAttribute(GetComponent<HealthController>().Attribute_Attack, true));
+                Target.GetComponent<HealthController>().TakeDamage(AttributeConverter.GetAttackDamageFromAttribute(GetComponent<HealthController>().Attribute_Attack, true));
                 AttackTimer = GameProperties.EnemyAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(GetComponent<HealthController>().Attribute_Attack, true);
             }
         }

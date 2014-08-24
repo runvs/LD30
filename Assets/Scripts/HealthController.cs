@@ -10,9 +10,23 @@ public class HealthController : MonoBehaviour
     public float CurrenteHealth;
     public float HealthMax;
 
+    private float flashTimeRemaining;
+    private float flashTimeMax;
+    private Color flashColor;
+
+
+    private SpriteRenderer renderer;
+
     void Start()
     {
-        //GetVariables(gameObject.GetComponent<UnitScript>().Name);
+        flashTimeMax = 0.35f;
+        flashTimeRemaining = -12345.0f;
+        flashColor = new Color(0.8f, 0.2f, 0.2f, 1.0f);//204 51 51    // red
+        renderer = gameObject.GetComponent<SpriteRenderer>();
+        if (!renderer)
+        {
+            throw new UnityException("No Renderer for HealthController");
+        }
     }
 
     public void GetVariables(string Name = "")
@@ -37,6 +51,22 @@ public class HealthController : MonoBehaviour
     void Update()
     {
         CheckDead();
+
+        if (flashTimeRemaining > 0.0f)
+        {
+            flashTimeRemaining -= Time.deltaTime;
+            renderer.color = Color.Lerp( flashColor, Color.white, (flashTimeMax - flashTimeRemaining) / flashTimeMax); ;
+        }
+        else if (flashTimeRemaining == -12345.0f)
+        {
+            renderer.color = Color.white;
+        }
+        else
+        {
+
+            flashTimeRemaining = -12345.0f;
+        }
+
     }
 
     private void CheckDead()
@@ -56,11 +86,24 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    public void RemoveHealth(float value)
+    // just decrease Value
+    private void RemoveHealth(float value)
     {
-        //Debug.Log("RemoveHealth");
         CurrenteHealth -= value;
         CheckDead();
+    }
+
+    // decrease Value and do some visual Feedback
+    public void TakeDamage(float value)
+    {
+        RemoveHealth(value);
+        FlashSprite();
+        
+    }
+
+    private void FlashSprite()
+    {
+        flashTimeRemaining = flashTimeMax;
     }
     public float GetHealth ()
     {
