@@ -193,6 +193,63 @@ public class UnitSelector : MonoBehaviour {
         }
     }
 
+    public GameObject GetUnitSelectedAndClosestTo(Vector3 targetPosition)
+    {
+        GameObject retVal = null;
+        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+        float shortestDistance = float.MaxValue;
+        if (units.Length == 0)
+        {
+            return null;
+        }
+        if (SelectedUnits.Count == 0)
+        {
+            return null;
+        }
+
+        foreach (var s in SelectedUnits)
+        {
+            foreach (var o in units)
+            {
+                UnitScript u = o.GetComponent<UnitScript>();
+                if (u.Name == s)
+                {
+                    Vector3 distance = u.transform.position - targetPosition;
+                    float sqrmag = distance.sqrMagnitude;
+                    if (sqrmag <= shortestDistance)
+                    {
+                        shortestDistance = sqrmag;
+                        retVal = u.gameObject;
+                    }
+                }
+            }
+        }
+        return retVal;
+    }
+
+    public GameObject GetUnitClosestTo (Vector3 targetPosition)
+    {
+        GameObject retVal = null;
+        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+        float shortestDistance = float.MaxValue;
+        if (units.Length == 0)
+        {
+            return null;
+        }
+        
+        for (int i = 0; i != units.Length; i++)
+        {
+            Vector3 distance = units[i].transform.position - targetPosition;
+            float sqrmag = distance.sqrMagnitude;
+            if (sqrmag <= shortestDistance)
+            {
+                shortestDistance = sqrmag;
+                retVal = units[i].gameObject;
+            }
+        }
+        return retVal;
+    }
+
     internal void SetAltar(GameObject altar)
     {
         if (NumberOfSelectedUnits() != 0)
@@ -200,7 +257,7 @@ public class UnitSelector : MonoBehaviour {
             Debug.Log("Unit found for altar" );
             GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
 
-            units[0].GetComponent<UnitScript>().SetAltar(altar);
+            GetUnitSelectedAndClosestTo(altar.transform.position).GetComponent<UnitScript>().SetAltar(altar);
         }
     }
 }

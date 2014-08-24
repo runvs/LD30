@@ -21,4 +21,12 @@ public static class GameProperties
     public static int StartingResearchPoints { get { return 10; } }
     public static int BaseAttributeCosts { get { return 5000; } }
     public static float AttributeIncreaseValue { get { return 0.05f; } }
+
+    public static int EnemyKillMoneyReward { get { return 60; } }
+
+    public static int UnitLostMoneyFine { get { return 500; } }
+
+    public static float UnitAttackMinimalRange { get { return 4.0f; } }
+
+    public static float EnemyAttackMinimalRange { get { return 3.5f; } }
 }
