@@ -3783,6 +3783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5037b646707c0a6458d90c656ee08e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackCursor: {fileID: 0}
   Name: badguy
 --- !u!114 &73321623
 MonoBehaviour:
@@ -16136,6 +16137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5037b646707c0a6458d90c656ee08e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackCursor: {fileID: 0}
   Name: badguy
 --- !u!114 &277785333
 MonoBehaviour:
@@ -102397,7 +102399,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Ok
 --- !u!222 &1839713313
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -110161,6 +110163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5037b646707c0a6458d90c656ee08e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackCursor: {fileID: 0}
   Name: badguy
 --- !u!114 &2000858938
 MonoBehaviour:

@@ -4,6 +4,7 @@ using System;
 
 public class AttackTarget : MonoBehaviour {
 
+    public Texture2D AttackCursor;
     public string Name;
     // Use this for initialization
     void Start () 
@@ -27,6 +28,16 @@ public class AttackTarget : MonoBehaviour {
     internal void PushBack(Vector3 direction)
     {
         this.GetComponent<Rigidbody2D>().AddForce(direction * 1.0f * GameProperties.AttackPushBackForceFactor);
+    }
+
+    void OnMouseEnter()
+    {
+        GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetAttack();
+    }
+
+    void OnMouseExit()
+    {
+        GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetNormal();
     }
 
 }

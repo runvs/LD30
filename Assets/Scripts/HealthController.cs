@@ -40,9 +40,9 @@ public class HealthController : MonoBehaviour
         }
         else
         {
-            this.Attribute_Health = 1;
-            this.Attribute_Attack = 1;
-            this.Attribute_Science = 1;
+            this.Attribute_Health = GameProperties.EnemyAttributeDefaultHealth;
+            this.Attribute_Attack = GameProperties.EnemyAttributeDefaultAttack;
+            this.Attribute_Science = GameProperties.EnemyAttributeDefaultScience;
         }
         CurrenteHealth = AttributeConverter.GetMaxHealthFromAttribute(Attribute_Health, this.tag != "Units");
         HealthMax = AttributeConverter.GetMaxHealthFromAttribute(Attribute_Health, this.tag != "Units");

@@ -29,4 +29,10 @@ public static class GameProperties
     public static float UnitAttackMinimalRange { get { return 4.0f; } }
 
     public static float EnemyAttackMinimalRange { get { return 3.5f; } }
+
+    public static float EnemyAttributeDefaultHealth { get { return 1.0f; } }
+
+    public static float EnemyAttributeDefaultAttack { get { return 0.25f; } }
+
+    public static float EnemyAttributeDefaultScience { get { return 0.0f; } }
 }
