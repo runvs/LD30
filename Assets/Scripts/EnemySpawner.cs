@@ -34,6 +34,15 @@ public class EnemySpawner : MonoBehaviour {
         string Identifier = Guid.NewGuid().ToString();
         Enemy.name = Identifier;
         Enemy.GetComponent<AttackTarget>().Name = Identifier;
+        Enemy.GetComponent<EnemyAttacker>().Target = PickRandomTarget();
+    }
+
+    private GameObject PickRandomTarget()
+    {
+        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+        int id = UnityEngine.Random.Range(0, units.Length -1);
+        return units[id];
+        
     }
 
 

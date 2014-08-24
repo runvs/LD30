@@ -17,5 +17,5 @@ public static class GameProperties
     public static float EnemyMaxVelocity { get { return 1.4f; } }
     public static float EnemyAttackTimerMax { get { return 1.1f; } }
 
-    public static float UnitAltarDefusionTime { get { return 10.0f;} }
+   // public static float UnitAltarDefusionTime { get { return 10.0f;} }    // is now saved in AltarAction
 }

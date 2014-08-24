@@ -5,6 +5,9 @@ public class AltarAction : MonoBehaviour {
 
 
     public bool Finished;
+    public EnemySpawner[] Spawners;
+
+    public float AltarTime;
 
     // Use this for initialization
     void Start () 
@@ -24,7 +27,16 @@ public class AltarAction : MonoBehaviour {
         {
             Debug.Log("You clicked Altar!");
             GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().SetAltar(this.gameObject);
-            GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.5f;
+            GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.15f;
+            StartSpawners();
+        }
+    }
+
+    private void StartSpawners()
+    {
+        foreach (var s in Spawners)
+        {
+            s.enabled = true;
         }
     }
 
