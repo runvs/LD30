@@ -54,21 +54,21 @@ public class UnitProperties : MonoBehaviour
 
     public void Exercise(string name, string attribute)
     {
+        var gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        gc.MoneyRemove(CalculateCosts(name, attribute));
+
         if (attribute.ToLower() == "health")
         {
-            TeamMembers[name].Health += 0.1f;
+            TeamMembers[name].Health += GameProperties.AttributeIncreaseValue;
         }
         else if (attribute.ToLower() == "attack")
         {
-            TeamMembers[name].Attack += 0.1f;
+            TeamMembers[name].Attack += GameProperties.AttributeIncreaseValue;
         }
         else if (attribute.ToLower() == "science")
         {
-            TeamMembers[name].Science += 0.1f;
+            TeamMembers[name].Science += GameProperties.AttributeIncreaseValue;
         }
-
-        var gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        gc.MoneyRemove(CalculateCosts(name, attribute));
     }
 
     public string GetDescription(string name)
