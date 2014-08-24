@@ -1,4 +1,5 @@
-# Created by http://www.gitignore.io
+Assets/UnityVS
+UnityVS.ld30.sln.DotSettings
 
 ### Windows ###
 # Windows image file caches
