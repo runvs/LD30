@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class AltarAction : MonoBehaviour {
+public class AltarAction : MonoBehaviour
+{
 
 
     public bool Finished;
@@ -12,16 +12,16 @@ public class AltarAction : MonoBehaviour {
     public float AltarTime;
 
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         Finished = false;
         InUse = false;
     }
-    
+
     // Update is called once per frame
-    void Update () 
+    void Update()
     {
-    
+
     }
 
     void OnMouseDown()
@@ -33,7 +33,7 @@ public class AltarAction : MonoBehaviour {
             GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.15f;
             StartSpawners();
         }
-        
+
     }
 
     private void StartSpawners()
@@ -52,6 +52,15 @@ public class AltarAction : MonoBehaviour {
         {
             Destroy(u);
         }
+
+        GameController gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        gc.FoundArtefacts += GameProperties.FoundArtifactReward;
+        gc.MoneyAdd(GameProperties.FoundArtifactReward);
+
+        gc.ResearchPoints += 15;
+        gc.ResearchPointsAdd(15);
+
+
         Application.LoadLevel("Headquarters");
         Finished = true;
     }

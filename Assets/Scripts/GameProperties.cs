@@ -22,6 +22,7 @@ public static class GameProperties
 
     public static int EnemyKillMoneyReward { get { return 60; } }
     public static int UnitLostMoneyFine { get { return 500; } }
+    public static int FoundArtifactReward { get { return 1500; } }
 
     public static float UnitAttackMinimalRange { get { return 4.0f; } }
 
@@ -32,9 +33,9 @@ public static class GameProperties
     public static float Tier3Multiplier { get { return 1.5f; } }
     public static float MinFixedCostsRange { get { return 0.01f; } }
     public static float MaxFixedCostsRange { get { return 0.09f; } }
-    
-    public static float EnemyAttribute_Bug_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f,+0.15f); } }
-    public static float EnemyAttribute_Bug_Attack { get { return 0.25f + UnityEngine.Random.Range(-0.05f, 0.5f ); } }
+
+    public static float EnemyAttribute_Bug_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f, +0.15f); } }
+    public static float EnemyAttribute_Bug_Attack { get { return 0.25f + UnityEngine.Random.Range(-0.05f, 0.5f); } }
     public static float EnemyMoveFactor_Bug { get { return 6.0f; } }
 
     public static float EnemyAttribute_BugFast_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f, +0.15f); } }
@@ -51,6 +52,8 @@ public static class GameProperties
 
 
     public static float EnemyAttributeDefaultScience { get { return 0.0f; } }
+
+
 
 
 }

@@ -98,17 +98,21 @@ public class HealthController : MonoBehaviour
 
         if (CurrenteHealth <= 0.0f)
         {
+            GameController gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
             Destroy(this.gameObject);
             if (this.tag == "Units")
             {
                 UnitTargetEvenetManager.Call(this.gameObject.GetComponent<UnitScript>().Name);
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().MoneyRemove(GameProperties.UnitLostMoneyFine);
+                gc.MoneyRemove(GameProperties.UnitLostMoneyFine);
+                gc.DeadTeamMembers += GameProperties.UnitLostMoneyFine;
+
             }
             else
             {
                 // then it must be an Enemy
                 AttackTargetEventManager.Call(this.gameObject.GetComponent<AttackTarget>().Name);
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().MoneyAdd(GameProperties.EnemyKillMoneyReward);
+                gc.MoneyAdd(GameProperties.EnemyKillMoneyReward);
+                gc.KilledEnemies += GameProperties.EnemyKillMoneyReward;
             }
         }
     }
