@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
@@ -40,7 +39,7 @@ public class HealthController : MonoBehaviour
         }
         else
         {
-            if(Name.Contains("bug_fast"))
+            if (Name.Contains("bug_fast"))
             {
                 this.Attribute_Health = GameProperties.EnemyAttribute_BugFast_Health;
                 this.Attribute_Attack = GameProperties.EnemyAttribute_BugFast_Attack;
@@ -80,7 +79,7 @@ public class HealthController : MonoBehaviour
         if (flashTimeRemaining > 0.0f)
         {
             flashTimeRemaining -= Time.deltaTime;
-            renderer.color = Color.Lerp( flashColor, Color.white, (flashTimeMax - flashTimeRemaining) / flashTimeMax); ;
+            renderer.color = Color.Lerp(flashColor, Color.white, (flashTimeMax - flashTimeRemaining) / flashTimeMax); ;
         }
         else if (flashTimeRemaining == -12345.0f)
         {
@@ -96,7 +95,7 @@ public class HealthController : MonoBehaviour
 
     private void CheckDead()
     {
-        
+
         if (CurrenteHealth <= 0.0f)
         {
             Destroy(this.gameObject);
@@ -117,6 +116,18 @@ public class HealthController : MonoBehaviour
     // just decrease Value
     private void RemoveHealth(float value)
     {
+        if (this.tag == "Units")
+        {
+            SfxrSynth synth = new SfxrSynth();
+            synth.parameters.SetSettingsString("0,.85,.006,.0168,,.257,.3,.2546,,-.3348,,,,,,,,,,,.5682,,,,,1,,,.2569,,,");
+            synth.PlayMutated();
+        }
+        else
+        {
+            SfxrSynth synth = new SfxrSynth();
+            synth.parameters.SetSettingsString("0,.75,.006,.0168,,.257,.3,.2546,,-.3348,,,,,,,,,,,.5682,,,,,1,,,.2569,,,");
+            synth.PlayMutated();
+        }
         CurrenteHealth -= value;
         CheckDead();
     }
@@ -126,22 +137,22 @@ public class HealthController : MonoBehaviour
     {
         RemoveHealth(value);
         FlashSprite();
-        
+
     }
 
     private void FlashSprite()
     {
         flashTimeRemaining = flashTimeMax;
     }
-    public float GetHealth ()
+    public float GetHealth()
     {
         return CurrenteHealth;
     }
 
-    public void ReFillHealth ()
+    public void ReFillHealth()
     {
         CurrenteHealth = HealthMax;
     }
 
-    
+
 }

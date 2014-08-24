@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class UnitScript : MonoBehaviour {
+public class UnitScript : MonoBehaviour
+{
 
 
     private Vector3 TargetPosition;
@@ -19,7 +19,7 @@ public class UnitScript : MonoBehaviour {
 
     public string Name;
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         TargetPosition = gameObject.transform.position;
         rgdb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -47,14 +47,14 @@ public class UnitScript : MonoBehaviour {
         }
     }
 
-    public void SetSelectionEnabled ( bool value)
+    public void SetSelectionEnabled(bool value)
     {
         selectorRenderer.enabled = value;
     }
 
-    
+
     // Update is called once per frame
-    void Update () 
+    void Update()
     {
 
         if (AttackTimerRemaining > 0.0f)
@@ -94,8 +94,8 @@ public class UnitScript : MonoBehaviour {
             rgdb2d.velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 0.95f;
         }
 
-       
-        
+
+
 
         //if(rgdb2d.)
         CapVelocity();
@@ -103,7 +103,7 @@ public class UnitScript : MonoBehaviour {
 
     private void CheckAutomaticAttack()
     {
-        if(!AttackTarget && !AltarTarget)
+        if (!AttackTarget && !AltarTarget)
         {
             //Get List of all Availible Enemies
             GameObject[] badguys = GameObject.FindGameObjectsWithTag("BadGuys");
@@ -160,12 +160,12 @@ public class UnitScript : MonoBehaviour {
                 AttackTimerRemaining += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
                 if (AttackTarget)
                 {
-                    GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position, direction.normalized, AttackTarget, this.gameObject);
+                    GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position, direction.normalized, this.gameObject);
                 }
             }
             else
             {
-                TargetPosition = this.transform.position + direction * 0.25f; 
+                TargetPosition = this.transform.position + direction * 0.25f;
             }
         }
     }
@@ -173,7 +173,7 @@ public class UnitScript : MonoBehaviour {
     private bool IsInRange(Vector3 direction)
     {
         bool retVal = direction.magnitude <= AttackRange;
-        return retVal;        
+        return retVal;
     }
 
 
