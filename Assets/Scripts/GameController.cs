@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -9,10 +10,65 @@ public class GameController : MonoBehaviour
     public int Money = GameProperties.StartingMoney;
     public int ResearchPoints = GameProperties.StartingResearchPoints;
 
-    public static bool Tier2Available = false;
-    public static bool Tier3Available = false;
+    public bool Tier2Available = false;
+    public bool Tier3Available = false;
 
     public static bool IsAtBase = true;
+
+    #region Debriefing Stuff
+
+    public int Electricity
+    {
+        get
+        {
+            var multiplier = 1.0f;
+
+            if (Tier2Available)
+            {
+                multiplier = GameProperties.Tier2Multiplier;
+                if (Tier3Available)
+                {
+                    multiplier = GameProperties.Tier3Multiplier;
+                }
+            }
+
+            var rand = UnityEngine.Random.Range(GameProperties.MinFixedCostsRange, GameProperties.MaxFixedCostsRange);
+            return (int)Math.Floor(TotalIncome * rand * multiplier);
+        }
+    }
+    public int Water
+    {
+        get
+        {
+            var multiplier = 1.0f;
+
+            if (Tier2Available)
+            {
+                multiplier = GameProperties.Tier2Multiplier;
+                if (Tier3Available)
+                {
+                    multiplier = GameProperties.Tier3Multiplier;
+                }
+            }
+
+            var rand = UnityEngine.Random.Range(GameProperties.MinFixedCostsRange, GameProperties.MaxFixedCostsRange);
+            return (int)Math.Floor(TotalIncome * rand * multiplier);
+        }
+    }
+    public int Rent { get { return GameProperties.Rent; } }
+
+    public int TeamCosts = 0;
+    public int DeadTeamMembers = 0;
+    public int FoundArtefacts = 0;
+    public int KilledEnemies = 0;
+    public int GainedResearchPoints = 0;
+
+    public int TotalIncome { get { return FoundArtefacts + KilledEnemies; } }
+    public int FixedCosts { get { return Electricity + Water + Rent; } }
+    public int TotalExpenses { get { return FixedCosts + TeamCosts + DeadTeamMembers; } }
+    public int TotalValue { get { return TotalIncome - TotalExpenses; } }
+
+    #endregion Debriefing Stuff
 
     void Start()
     {

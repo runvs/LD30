@@ -19,6 +19,7 @@ TagManager:
   - EnemySpawner
   - bgm
   - TutorialScript
+  - BriefingTextValue
   - CursorManager
   - 
   Builtin Layer 0: Default

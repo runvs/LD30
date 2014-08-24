@@ -27,6 +27,12 @@ public static class GameProperties
 
     public static float EnemyAttackMinimalRange { get { return 3.5f; } }
 
+    public static int Rent { get { return 1000; } }
+    public static float Tier2Multiplier { get { return 1.25f; } }
+    public static float Tier3Multiplier { get { return 1.5f; } }
+    public static float MinFixedCostsRange { get { return 0.01f; } }
+    public static float MaxFixedCostsRange { get { return 0.09f; } }
+    
     public static float EnemyAttribute_Bug_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f,+0.15f); } }
     public static float EnemyAttribute_Bug_Attack { get { return 0.25f + UnityEngine.Random.Range(-0.05f, 0.5f ); } }
     public static float EnemyMoveFactor_Bug { get { return 6.0f; } }
