@@ -8892,7 +8892,7 @@ GameObject:
   - 114: {fileID: 356562049}
   m_Layer: 8
   m_Name: DebriefingPanel
-  m_TagString: Untagged
+  m_TagString: DebriefingController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42142,7 +42142,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1640501707}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_RenderMode: 0
   m_Camera: {fileID: 0}

@@ -71,7 +71,7 @@ public class DebriefingController : MonoBehaviour
         #endregion
     }
 
-    void Update()
+    public void SetValues()
     {
         _totalExpenses.text = _gameController.TotalExpenses.ToString();
         _fixedCosts.text = _gameController.FixedCosts.ToString();
