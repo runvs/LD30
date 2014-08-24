@@ -123,6 +123,10 @@ public class GameController : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("bgm"));
 
         IsAtBase = true;
-        //Application.LoadLevel("Menu");
+
+        var dc = GameObject.FindGameObjectWithTag("DebriefingController").GetComponent<DebriefingController>();
+        dc.SetValues();
+
+        MoneyRemove(FixedCosts);
     }
 }
