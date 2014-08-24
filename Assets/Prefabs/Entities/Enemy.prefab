@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
