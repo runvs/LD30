@@ -14,16 +14,18 @@ public class TeamSelection : MonoBehaviour
             var toggle = GetComponent<Toggle>();
             toggle.onValueChanged.AddListener(CheckTeamMembers);
 
+            var gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
             if (Tier == 2)
             {
-                if (!GameController.Tier2Available)
+                if (!gc.Tier2Available)
                 {
                     toggle.interactable = false;
                 }
             }
             else if (Tier == 3)
             {
-                if (!GameController.Tier3Available)
+                if (!gc.Tier3Available)
                 {
                     toggle.interactable = false;
                 }

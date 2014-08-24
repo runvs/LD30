@@ -29,4 +29,10 @@ public static class GameProperties
     public static float UnitAttackMinimalRange { get { return 4.0f; } }
 
     public static float EnemyAttackMinimalRange { get { return 3.5f; } }
+
+    public static int Rent { get { return 1000; } }
+    public static float Tier2Multiplier { get { return 1.25f; } }
+    public static float Tier3Multiplier { get { return 1.5f; } }
+    public static float MinFixedCostsRange { get { return 0.01f; } }
+    public static float MaxFixedCostsRange { get { return 0.09f; } }
 }
