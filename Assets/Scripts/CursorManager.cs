@@ -24,7 +24,6 @@ public class CursorManager : MonoBehaviour {
     {
         Cursor.SetCursor(AttackCursor, new Vector2(8, 8), CursorMode.Auto);
     }
-
     public void SetNormal ()
     {
         Cursor.SetCursor(NormalCursor, new Vector2(0, 0), CursorMode.Auto);
