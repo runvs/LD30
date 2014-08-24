@@ -4,10 +4,15 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public static List<string> SelectedTeamMembers = new List<string>();
+    public static List<string> TeamMembersInExercise = new List<string>();
+
+    public static int Money = 10000;
+    public static int ResearchPoints = 10;
+
     public static bool Tier2Available = false;
     public static bool Tier3Available = false;
 
-    private bool _isAtBase = true;
+    public static bool IsAtBase = true;
 
     void Start()
     {
@@ -16,7 +21,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (!_isAtBase)
+        if (!IsAtBase)
         {
             GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
 
@@ -28,12 +33,33 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void MoneyAdd(int amount)
+    {
+        Money += amount;
+    }
+
+    public void MoneyRemove(int amount)
+    {
+        Money -= amount;
+    }
+
+    public void ResearchPointsAdd(int amount)
+    {
+        ResearchPoints += amount;
+    }
+
+    public void ResearchPointsRemove(int amount)
+    {
+        ResearchPoints -= amount;
+    }
+
     public void ResetGame()
     {
         Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
         Destroy(GameObject.FindGameObjectWithTag("bgm"));
         Destroy(GameObject.FindGameObjectWithTag("StoryManager"));
 
+        IsAtBase = true;
         //Application.LoadLevel("Menu");
     }
 }

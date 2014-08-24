@@ -47,6 +47,6 @@ public class UIHelper : MonoBehaviour
 
         Application.LoadLevel(missionName);
 
-
+        GameController.IsAtBase = false;
     }
 }
