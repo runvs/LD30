@@ -15,8 +15,6 @@ public static class GameProperties
     public static float EnemyMaxVelocity { get { return 1.4f; } }
     public static float EnemyAttackTimerMax { get { return 1.1f; } }
 
-    // public static float UnitAltarDefusionTime { get { return 10.0f;} }    // is now saved in AltarAction
-
     public static int StartingMoney { get { return 2500; } }
     public static int StartingResearchPoints { get { return 10; } }
     public static int BaseAttributeCosts { get { return 5000; } }

@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public class UnitSelector : MonoBehaviour {
+public class UnitSelector : MonoBehaviour
+{
 
 
     private List<string> SelectedUnits;
@@ -12,12 +12,12 @@ public class UnitSelector : MonoBehaviour {
     public int NumberOfSelectedUnits()
     {
         return SelectedUnits.Count;
-        
+
     }
 
     private void RemoveFromSelection(string name)
     {
-        if(SelectedUnits.Contains(name))
+        if (SelectedUnits.Contains(name))
         {
             SelectedUnits.Remove(name);
         }
@@ -29,15 +29,15 @@ public class UnitSelector : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         SelectedUnits = new List<string>();
         UnitTargetEvenetManager.OnDelete += RemoveFromSelection;
         DeselectAllUnits();
     }
-    
+
     // Update is called once per frame
-    void Update () 
+    void Update()
     {
         if (!tut && Application.loadedLevelName == "AncientTemple")
         {
@@ -52,7 +52,7 @@ public class UnitSelector : MonoBehaviour {
         {
             if (Input.GetMouseButtonUp(0))
             {
-                if (SelectedUnits.Count != 0 )
+                if (SelectedUnits.Count != 0)
                 {
                     if (tut && !tut.IsMessagePresent || !tut)
                     {
@@ -61,6 +61,8 @@ public class UnitSelector : MonoBehaviour {
                         GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
 
                         TutorialMove();
+
+                        PlayPlaceOrderSound();
 
                         foreach (var s in SelectedUnits)
                         {
@@ -87,22 +89,30 @@ public class UnitSelector : MonoBehaviour {
         }
     }
 
-
-
-
-    public void DeselectAllUnits()
+    private void PlayPlaceOrderSound()
     {
-        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
-
-        foreach (var o in units)
-        {
-            UnitScript u = o.GetComponent<UnitScript>();
-            u.SetSelectionEnabled(false);
-        }
-
-        TutorialDeSelect();
-        SelectedUnits.Clear();
+        SfxrSynth synth = new SfxrSynth();
+        synth.parameters.SetSettingsString("1,.496,.006,.1398,,.082,,.568,,,,,,,,,,,,,,,,,,1,,,.1,,,");
+        synth.Play();
     }
+
+    private void PlaySelectSound()
+    {
+        SfxrSynth synth = new SfxrSynth();
+        synth.parameters.SetSettingsString("1,.674,,.1398,,.102,,.333,,,,,,,,,,,,,,,,,,.679,,,,,,");
+        synth.Play();
+    }
+
+    private void PlayDeselectSound()
+    {
+        SfxrSynth synth = new SfxrSynth();
+        synth.parameters.SetSettingsString("1,.674,,.1398,,.102,,.187,,,,,,,,,,,,,,,,,,.679,,,,,,");
+        synth.Play();
+    }
+
+
+
+
 
 
     public void TutorialSelect()
@@ -148,12 +158,16 @@ public class UnitSelector : MonoBehaviour {
     }
 
 
-    public void AddSelection (string name)
+    public void AddSelection(string name)
     {
         if (!string.IsNullOrEmpty(name))
         {
             SelectedUnits.Add(name);
             TutorialSelect();
+            PlaySelectSound();
+
+
+
         }
 
         GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
@@ -169,6 +183,22 @@ public class UnitSelector : MonoBehaviour {
             }
         }
 
+    }
+
+    public void DeselectAllUnits()
+    {
+        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+
+        foreach (var o in units)
+        {
+            UnitScript u = o.GetComponent<UnitScript>();
+            u.SetSelectionEnabled(false);
+        }
+
+        TutorialDeSelect();
+        SelectedUnits.Clear();
+
+        PlayDeselectSound();
     }
 
 
@@ -227,7 +257,7 @@ public class UnitSelector : MonoBehaviour {
         return retVal;
     }
 
-    public GameObject GetUnitClosestTo (Vector3 targetPosition)
+    public GameObject GetUnitClosestTo(Vector3 targetPosition)
     {
         GameObject retVal = null;
         GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
@@ -236,7 +266,7 @@ public class UnitSelector : MonoBehaviour {
         {
             return null;
         }
-        
+
         for (int i = 0; i != units.Length; i++)
         {
             Vector3 distance = units[i].transform.position - targetPosition;
@@ -254,7 +284,7 @@ public class UnitSelector : MonoBehaviour {
     {
         if (NumberOfSelectedUnits() != 0)
         {
-            Debug.Log("Unit found for altar" );
+            Debug.Log("Unit found for altar");
             GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
 
             GetUnitSelectedAndClosestTo(altar.transform.position).GetComponent<UnitScript>().SetAltar(altar);
