@@ -9,6 +9,8 @@ public class UpdateResources : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
+
         _gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         _money = transform.GetChild(0).FindChild("MoneyValue").GetComponent<Text>();
         _researchPoints = transform.GetChild(0).FindChild("ResearchPointsValue").GetComponent<Text>();

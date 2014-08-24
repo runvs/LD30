@@ -119,9 +119,6 @@ public class GameController : MonoBehaviour
 
     public void ResetGame()
     {
-        //Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
-        //Destroy(GameObject.FindGameObjectWithTag("bgm"));     // startet schon im Menu
-
         IsAtBase = true;
 
         var dc = GameObject.FindGameObjectWithTag("DebriefingController").GetComponent<DebriefingController>();
@@ -129,5 +126,7 @@ public class GameController : MonoBehaviour
         dc.GetComponentInParent<Canvas>().enabled = true;
 
         MoneyRemove(FixedCosts);
+
+        Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
     }
 }
