@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: e30576b9a60ecd24f8e920714b52d8de
+guid: 408bbf242442e7042b4a800f0a425d57
 TextureImporter:
   fileIDToRecycleName:
-    21300000: badguy
+    21300000: bugfast
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

@@ -9,8 +9,34 @@ public class AttackTarget : MonoBehaviour {
     // Use this for initialization
     void Start () 
     {
-        Name = Guid.NewGuid().ToString();
+      
+        
     }
+
+    public void SetNames()
+    {
+        if (this.gameObject.name == "bug")
+        {
+            Name = "bug_" + Guid.NewGuid().ToString();
+        }
+        else if (this.gameObject.name == "bug_fast")
+        {
+            Name = "bug_fast" + Guid.NewGuid().ToString();
+        }
+        else if (this.gameObject.name == "enemy_weapon")
+        {
+            Name = "enemy_weapon" + Guid.NewGuid().ToString();
+        }
+        else if (this.gameObject.name == "enemy")
+        {
+            Name = "enemy" + Guid.NewGuid().ToString();
+        }
+        else
+        {
+            Name = "badguy_" + Guid.NewGuid().ToString();
+        }
+    }
+
     
     // Update is called once per frame
     void Update () 
