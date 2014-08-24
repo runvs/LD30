@@ -16089,6 +16089,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Finished: 0
+  Spawners:
+  - {fileID: 1131762425}
 --- !u!1001 &314966089
 Prefab:
   m_ObjectHideFlags: 0
@@ -55281,7 +55283,7 @@ GameObject:
   - 114: {fileID: 1131762425}
   m_Layer: 0
   m_Name: EnemySpawner
-  m_TagString: Untagged
+  m_TagString: EnemySpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55307,7 +55309,7 @@ Transform:
   m_PrefabInternal: {fileID: 1936451403}
   m_GameObject: {fileID: 1131762424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5921998, y: 23.0209999, z: 0}
+  m_LocalPosition: {x: 6.04090023, y: 23.0209999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95834,7 +95836,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: c08b6a6aab8858548a5e7f35c5844aca, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.5921998
+      value: 6.04090023
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c08b6a6aab8858548a5e7f35c5844aca, type: 2}
       propertyPath: m_LocalPosition.y
@@ -95867,6 +95869,10 @@ Prefab:
     - target: {fileID: 11400000, guid: c08b6a6aab8858548a5e7f35c5844aca, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c08b6a6aab8858548a5e7f35c5844aca, type: 2}
+      propertyPath: m_TagString
+      value: EnemySpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c08b6a6aab8858548a5e7f35c5844aca, type: 2}

@@ -46,7 +46,7 @@ public class UnitSelector : MonoBehaviour {
             {
                 if (SelectedUnits.Count != 0)
                 {
-                    InputTimer += 0.5f;
+                    InputTimer += 0.15f;
 
                     GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
 
@@ -69,7 +69,7 @@ public class UnitSelector : MonoBehaviour {
             if (Input.GetMouseButtonUp(1))
             {
                 DeselectAllUnits();
-                InputTimer += 0.25f;
+                InputTimer += 0.05f;
             }
         }
     }

@@ -21,7 +21,7 @@ public class AttackTarget : MonoBehaviour {
     {
         Debug.Log("You clicked Enemy!");
         GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().SetAttackTarget(this.gameObject);
-        GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.5f;
+        GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.15f;
     }
 
     internal void PushBack(Vector3 direction)
