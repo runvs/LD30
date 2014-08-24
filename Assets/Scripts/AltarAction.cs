@@ -7,6 +7,8 @@ public class AltarAction : MonoBehaviour {
     public bool Finished;
     public EnemySpawner[] Spawners;
 
+    public float AltarTime;
+
     // Use this for initialization
     void Start () 
     {

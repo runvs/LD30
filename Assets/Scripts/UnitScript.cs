@@ -157,7 +157,7 @@ public class UnitScript : MonoBehaviour {
     internal void SetAltar(GameObject altar)
     {
         this.AltarTarget = altar;
-        this.AltarTimeRemaining = GameProperties.UnitAltarDefusionTime;
+        this.AltarTimeRemaining = altar.GetComponent<AltarAction>().AltarTime;
 
         this.TargetPosition = altar.transform.position; // walk to the altar
     }
