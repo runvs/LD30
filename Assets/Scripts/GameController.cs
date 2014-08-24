@@ -126,6 +126,7 @@ public class GameController : MonoBehaviour
 
         var dc = GameObject.FindGameObjectWithTag("DebriefingController").GetComponent<DebriefingController>();
         dc.SetValues();
+        dc.GetComponentInParent<Canvas>().enabled = true;
 
         MoneyRemove(FixedCosts);
     }
