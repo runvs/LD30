@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: shot1
   m_TagString: Shots
   m_Icon: {fileID: 0}

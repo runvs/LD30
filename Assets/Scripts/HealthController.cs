@@ -15,7 +15,7 @@ public class HealthController : MonoBehaviour
         //GetVariables(gameObject.GetComponent<UnitScript>().Name);
     }
 
-    public void GetVariables(string Name)
+    public void GetVariables(string Name = "")
     {
         if (this.tag == "Units")
         {

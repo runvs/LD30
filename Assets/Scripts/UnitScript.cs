@@ -15,6 +15,7 @@ public class UnitScript : MonoBehaviour {
 
 
     private Rigidbody2D rgdb2d; // for  easy writing
+    private SpriteRenderer selectorRenderer;
 
     public string Name;
     // Use this for initialization
@@ -24,13 +25,17 @@ public class UnitScript : MonoBehaviour {
         rgdb2d = gameObject.GetComponent<Rigidbody2D>();
         if (!rgdb2d)
         {
-            throw new UnityException("No Rigidbody2d");
+            throw new UnityException("Unit with No Rigidbody2d");
         }
 
         AttackTargetEventManager.OnDelete += RemoveAttackTarget;
 
         DontDestroyOnLoad(this.gameObject);
-
+        selectorRenderer = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        if (!selectorRenderer)
+        {
+            throw new UnityException("Unit with No Selector");
+        }
     }
 
     private void RemoveAttackTarget(string name)
@@ -41,6 +46,12 @@ public class UnitScript : MonoBehaviour {
             this.AttackTarget = null;
         }
     }
+
+    public void SetSelectionEnabled ( bool value)
+    {
+        selectorRenderer.enabled = value;
+    }
+
     
     // Update is called once per frame
     void Update () 
@@ -73,7 +84,8 @@ public class UnitScript : MonoBehaviour {
         if (difference.magnitude >= 0.5f)
         {
             //Debug.Log(CurrentPosition + " " + TargetPosition + " " + difference);
-            rgdb2d.AddForce(difference.normalized * GameProperties.UnitMoveForceFactor);
+            rgdb2d.velocity = difference.normalized * GameProperties.UnitMoveVelocityFactor;
+            //rgdb2d.AddForce(difference.normalized * GameProperties.UnitMoveForceFactor);
         }
         else
         {
@@ -94,6 +106,7 @@ public class UnitScript : MonoBehaviour {
 
         if (rgdb2d.velocity.SqrMagnitude() >= GameProperties.UnitMaxVelocity * GameProperties.UnitMaxVelocity)
         {
+            //Debug.Log("Cap Velo");
             rgdb2d.velocity = this.GetComponent<Rigidbody2D>().velocity.normalized * GameProperties.UnitMaxVelocity;
         }
         //Debug.Log(rgdb2d.velocity);
