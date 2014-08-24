@@ -6,6 +6,7 @@ public class EnemyAttacker : MonoBehaviour
 
     private float AttackTimer;
     public GameObject Target;
+    private float MinimalRange = GameProperties.EnemyAttackMinimalRange;
 
     Rigidbody2D rgdb2d;
 
@@ -40,11 +41,21 @@ public class EnemyAttacker : MonoBehaviour
             else
             {
                 rgdb2d.velocity = gameObject.GetComponent<Rigidbody2D>().velocity * 0.95f;
-                
+
             }
 
             CapVelocity();
         }
+        else
+        {
+            Target = GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().GetUnitClosestTo(this.transform.position);
+            if ((Target.transform.position - this.transform.position).magnitude > MinimalRange)
+            {
+                Target = null;
+            }
+        }
+
+
     }
 
     public void CapVelocity()

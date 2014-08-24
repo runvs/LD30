@@ -8,7 +8,7 @@ public class UnitScript : MonoBehaviour {
 
     public GameObject AttackTarget;
     private float AttackTimerRemaining;
-    private float AttackRange = 4.0f;
+    private float AttackRange = GameProperties.UnitAttackMinimalRange;
 
     public GameObject AltarTarget;
     private float AltarTimeRemaining;
@@ -78,6 +78,8 @@ public class UnitScript : MonoBehaviour {
             }
         }
 
+        CheckAutomaticAttack();
+
 
         Vector3 CurrentPosition = gameObject.transform.position;
         Vector3 difference = (TargetPosition - CurrentPosition);
@@ -97,6 +99,28 @@ public class UnitScript : MonoBehaviour {
 
         //if(rgdb2d.)
         CapVelocity();
+    }
+
+    private void CheckAutomaticAttack()
+    {
+        if(!AttackTarget && !AltarTarget)
+        {
+            //Get List of all Availible Enemies
+            GameObject[] badguys = GameObject.FindGameObjectsWithTag("BadGuys");
+
+
+            // Check if an enemy is closer to the unit than the range
+            foreach (var go in badguys)
+            {
+                Vector3 distance = go.transform.position - this.transform.position;
+                if (distance.magnitude <= AttackRange)
+                {
+                    this.AttackTarget = go;
+                }
+            }
+
+            // start shooting
+        }
     }
 
     public void CapVelocity()
@@ -136,7 +160,7 @@ public class UnitScript : MonoBehaviour {
                 AttackTimerRemaining += GameProperties.UnitAttackTimerMax * AttributeConverter.GetAttackTimeFactorFromAttribute(this.gameObject.GetComponent<HealthController>().Attribute_Attack, false);
                 if (AttackTarget)
                 {
-                    GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position + direction * 0.25f, direction.normalized, AttackTarget, this.gameObject);
+                    GameObject.FindGameObjectWithTag("BattleSystem").GetComponent<BattleSystem>().SpawnShot1(this.transform.position, direction.normalized, AttackTarget, this.gameObject);
                 }
             }
             else

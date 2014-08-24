@@ -30,11 +30,12 @@ public class EnemySpawner : MonoBehaviour {
 
     private void SpawnEnemy()
     {
-        GameObject Enemy = Instantiate(EnemyTemplate, this.transform.position, new Quaternion()) as GameObject;
+        GameObject enemy = Instantiate(EnemyTemplate, this.transform.position, new Quaternion()) as GameObject;
         string Identifier = Guid.NewGuid().ToString();
-        Enemy.name = Identifier;
-        Enemy.GetComponent<AttackTarget>().Name = Identifier;
-        Enemy.GetComponent<EnemyAttacker>().Target = PickRandomTarget();
+        enemy.name = Identifier;
+        enemy.GetComponent<AttackTarget>().Name = Identifier;
+        //Enemy.GetComponent<EnemyAttacker>().Target = PickRandomTarget();
+        enemy.GetComponent<EnemyAttacker>().Target = GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().GetUnitClosestTo(this.transform.position);
     }
 
     private GameObject PickRandomTarget()
