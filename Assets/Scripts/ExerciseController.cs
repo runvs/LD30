@@ -23,8 +23,11 @@ public class ExerciseController : MonoBehaviour
     void Update()
     {
         var gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        var costs = _unitProperties.CalculateCosts(_name, _attribute);
 
-        if (_unitProperties.CalculateCosts(_name, _attribute) > gc.Money)
+        // Make sure we can't upgrade if we don't have enough money
+        // ...or if we've upgraded our guy to max already.
+        if (costs > gc.Money || costs > GameProperties.BaseAttributeCosts)
         {
             GetComponent<Button>().interactable = false;
         }
