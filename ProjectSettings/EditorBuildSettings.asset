@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/PathfinderTest.unity
   - enabled: 1
     path: Assets/AncientTemple.unity
+  - enabled: 1
+    path: Assets/DesertCanyon.unity
