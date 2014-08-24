@@ -14,7 +14,7 @@ public class UIHelper : MonoBehaviour
                 var canvasComponent = canvas.GetComponent<Canvas>();
                 canvasComponent.enabled = true;
             }
-            else if (canvas.name != "WorldSpaceCanvas")
+            else if (canvas.name != "WorldSpaceCanvas" && canvas.name != "MainUICanvas")
             {
                 var canvasComponent = canvas.GetComponent<Canvas>();
                 canvasComponent.enabled = false;
@@ -38,7 +38,7 @@ public class UIHelper : MonoBehaviour
 
         Application.LoadLevel(missionName);
 
-        
+
 
         GameController.IsAtBase = false;
     }

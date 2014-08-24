@@ -6,8 +6,8 @@ public class GameController : MonoBehaviour
     public static List<string> SelectedTeamMembers = new List<string>();
     public static List<string> TeamMembersInExercise = new List<string>();
 
-    public static int Money = 10000;
-    public static int ResearchPoints = 10;
+    public int Money = GameProperties.StartingMoney;
+    public int ResearchPoints = GameProperties.StartingResearchPoints;
 
     public static bool Tier2Available = false;
     public static bool Tier3Available = false;
