@@ -18,4 +18,8 @@ public static class GameProperties
     public static float EnemyAttackTimerMax { get { return 1.1f; } }
 
    // public static float UnitAltarDefusionTime { get { return 10.0f;} }    // is now saved in AltarAction
+
+    public static int EnemyKillMoneyReward { get { return 60; } }
+
+    public static int UnitLostMoneyFine { get { return 500; } }
 }

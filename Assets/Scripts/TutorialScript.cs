@@ -25,14 +25,13 @@ public class TutorialScript : MonoBehaviour {
     private bool hasDeSelectedUnit;
 
     public bool IsWaitingForMoveUnit { get; set; }
-    public bool HasMovedUnit { get { return hasMovedUnit; } set { hasMovedUnit = value; if (value == true) { ShowNextMessage(); IsWaitingForMoveUnit = false; } } }
+    public bool HasMovedUnit { get { return hasMovedUnit; } set { hasMovedUnit = value; if (value == true) { ShowNextMessage(); IsWaitingForMoveUnit = false; SetTimer(2.5f); } } }
     private bool hasMovedUnit;
 
     public bool IsMessagePresent { get { return GetComponent<Canvas>().enabled; } }
 
     List<string> Messages;
     
-
 
     public bool IsWaitingForTimer = false;
 
@@ -42,19 +41,11 @@ public class TutorialScript : MonoBehaviour {
     {
         Messages = new List<string>();
 
-        Messages.Add("asd");
-        Messages.Add("To move the Camera, press WASD or use the arrow Keys.");
-        Messages.Add("To give orders to your troops, you need to select them by clicking on them.");
-        Messages.Add("You can have multiple units selected at the same time.");
-        Messages.Add("To deselect a unit just perform a right click.");
-        Messages.Add("To give a move order select a unit and left click anywhere. It will try to move reach the position.");
-        Messages.Add("If you want your Troops to attack an enemy, select them, leftclick on the bad guy and watch him getting wasted.");
-        SetTimer(0.1f);
         TutorialRunning = true;
 
         IsWaitingForCameraMove = true;
         HasMovedCamera = false;
-        
+
         IsWaitingForSelectUnits = false;
         HasSelectedUnit = false;
 
@@ -63,6 +54,23 @@ public class TutorialScript : MonoBehaviour {
 
         IsWaitingForMoveUnit = false;
         HasMovedUnit = false;
+
+
+        Messages.Add("asd");
+        Messages.Add("To move the Camera, press WASD or use the arrow Keys.");
+        Messages.Add("To give orders to your troops, you need to select them by clicking on them.");
+        Messages.Add("You can have multiple units selected at the same time.");
+        Messages.Add("To deselect a unit just perform a right click.");
+        Messages.Add("To give a move order select a unit and left click anywhere. It will try to move reach the position.");
+        Messages.Add("If you want your Troops to attack an enemy, select them, leftclick on the bad guy and watch him getting wasted.");
+        Messages.Add("So, let's explore this old Temple.");
+        Messages.Add("Whoar, ugly Bugs!");
+        Messages.Add("Hey, we can examine this old altar. Just select the scientist and assign him on the altar!");
+
+        // start the tutorial right after the map has loaded
+        SetTimer(0.1f);
+
+        
     }
 
     public void SetTimer (float Timer)

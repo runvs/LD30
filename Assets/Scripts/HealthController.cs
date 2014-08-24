@@ -78,10 +78,13 @@ public class HealthController : MonoBehaviour
             if (this.tag == "Units")
             {
                 UnitTargetEvenetManager.Call(this.gameObject.GetComponent<UnitScript>().Name);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().MoneyRemove(GameProperties.UnitLostMoneyFine);
             }
             else
             {
+                // then it must be an Enemy
                 AttackTargetEventManager.Call(this.gameObject.GetComponent<AttackTarget>().Name);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().MoneyAdd(GameProperties.EnemyKillMoneyReward);
             }
         }
     }
