@@ -86,7 +86,15 @@ public class GameController : MonoBehaviour
                 ResetGame();
             }
         }
+    }
 
+    public void ResetDebriefingValues()
+    {
+        TeamCosts = 0;
+        DeadTeamMembers = 0;
+        FoundArtefacts = 0;
+        KilledEnemies = 0;
+        GainedResearchPoints = 0;
     }
 
     public void MoneyAdd(int amount)
