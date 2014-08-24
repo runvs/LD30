@@ -14,7 +14,7 @@ public class EnemyAttacker : MonoBehaviour
     {
         rgdb2d = this.gameObject.GetComponent<Rigidbody2D>();
         UnitTargetEvenetManager.OnDelete += RemoveTarget;
-
+        this.GetComponent<HealthController>().GetVariables();
     }
 
     private void RemoveTarget(string name)
@@ -52,9 +52,9 @@ public class EnemyAttacker : MonoBehaviour
         // no rotation
         this.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-        if (rgdb2d.velocity.SqrMagnitude() >= GameProperties.UnitMaxVelocity * GameProperties.UnitMaxVelocity)
+        if (rgdb2d.velocity.SqrMagnitude() >= GameProperties.EnemyMaxVelocity * GameProperties.EnemyMaxVelocity)
         {
-            rgdb2d.velocity = this.GetComponent<Rigidbody2D>().velocity.normalized * GameProperties.UnitMaxVelocity;
+            rgdb2d.velocity = this.GetComponent<Rigidbody2D>().velocity.normalized * GameProperties.EnemyMaxVelocity;
         }
         //Debug.Log(rgdb2d.velocity);
     }

@@ -30,6 +30,7 @@ public class UnitSelector : MonoBehaviour {
     {
         SelectedUnits = new List<string>();
         UnitTargetEvenetManager.OnDelete += RemoveFromSelection;
+        DeselectAllUnits();
     }
     
     // Update is called once per frame
@@ -75,6 +76,14 @@ public class UnitSelector : MonoBehaviour {
 
     public void DeselectAllUnits()
     {
+        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+
+        foreach (var o in units)
+        {
+            UnitScript u = o.GetComponent<UnitScript>();
+            u.SetSelectionEnabled(false);
+        }
+
         SelectedUnits.Clear();
     }
     public void AddSelection (string name)
@@ -83,6 +92,20 @@ public class UnitSelector : MonoBehaviour {
         {
             SelectedUnits.Add(name);
         }
+
+        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+        foreach (var s in SelectedUnits)
+        {
+            foreach (var o in units)
+            {
+                UnitScript u = o.GetComponent<UnitScript>();
+                if (u.Name == s)
+                {
+                    u.SetSelectionEnabled(true);
+                }
+            }
+        }
+
     }
 
 
