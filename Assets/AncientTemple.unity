@@ -48084,7 +48084,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 582b353a5b80ff443915665eed823f56, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 582b353a5b80ff443915665eed823f56, type: 2}
@@ -64685,6 +64685,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet1: {fileID: 100000, guid: d6d4ac6e0d400364dbc90682627e1565, type: 2}
+  BulletHitsWallParticle: {fileID: 100000, guid: 9486cc96bc1ffbb4faf189b309110bbc,
+    type: 2}
 --- !u!4 &1178283809
 Transform:
   m_ObjectHideFlags: 0
