@@ -57,7 +57,6 @@ public class GameController : MonoBehaviour
     {
         Destroy(GameObject.FindGameObjectWithTag("MainCamera"));
         Destroy(GameObject.FindGameObjectWithTag("bgm"));
-        Destroy(GameObject.FindGameObjectWithTag("StoryManager"));
 
         IsAtBase = true;
         //Application.LoadLevel("Menu");

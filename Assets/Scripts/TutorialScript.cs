@@ -42,13 +42,14 @@ public class TutorialScript : MonoBehaviour {
     {
         Messages = new List<string>();
 
+        Messages.Add("asd");
         Messages.Add("To move the Camera, press WASD or use the arrow Keys.");
         Messages.Add("To give orders to your troops, you need to select them by clicking on them.");
         Messages.Add("You can have multiple units selected at the same time.");
         Messages.Add("To deselect a unit just perform a right click.");
         Messages.Add("To give a move order select a unit and left click anywhere. It will try to move reach the position.");
         Messages.Add("If you want your Troops to attack an enemy, select them, leftclick on the bad guy and watch him getting wasted.");
-        ShowMessage();
+        SetTimer(0.1f);
         TutorialRunning = true;
 
         IsWaitingForCameraMove = true;
@@ -76,7 +77,7 @@ public class TutorialScript : MonoBehaviour {
 
         if (IsWaitingForTimer)
         {
-            if (GetComponent<Canvas>().enabled == false)
+            if (GetComponent<Canvas>() && GetComponent<Canvas>().enabled == false)
             {
                 TutorialTimer -= Time.deltaTime;
                 if (TutorialTimer <= 0)
@@ -102,7 +103,7 @@ public class TutorialScript : MonoBehaviour {
     {
         if (Messages.Count != 0)
         {
-            this.transform.GetChild(0).transform.FindChild("Text").GetComponent<Text>().text = Messages[0];
+            this.transform.GetComponentInChildren<Text>().text = Messages[0];
             GetComponent<Canvas>().enabled = true;
         }
     }
