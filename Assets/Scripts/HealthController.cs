@@ -29,7 +29,7 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    public void GetVariables(string Name = "")
+    public void GetVariables(string Name)
     {
         if (this.tag == "Units")
         {
@@ -40,9 +40,34 @@ public class HealthController : MonoBehaviour
         }
         else
         {
-            this.Attribute_Health = 1;
-            this.Attribute_Attack = 1;
-            this.Attribute_Science = 1;
+            if(Name.Contains("bug_fast"))
+            {
+                this.Attribute_Health = GameProperties.EnemyAttribute_BugFast_Health;
+                this.Attribute_Attack = GameProperties.EnemyAttribute_BugFast_Attack;
+                this.Attribute_Science = GameProperties.EnemyAttributeDefaultScience;
+                this.GetComponent<EnemyAttacker>().MoveFactor = GameProperties.EnemyMoveFactor_BugFast;
+            }
+            else if (Name.Contains("bug"))
+            {
+                this.Attribute_Health = GameProperties.EnemyAttribute_Bug_Health;
+                this.Attribute_Attack = GameProperties.EnemyAttribute_Bug_Attack;
+                this.Attribute_Science = GameProperties.EnemyAttributeDefaultScience;
+                this.GetComponent<EnemyAttacker>().MoveFactor = GameProperties.EnemyMoveFactor_Bug;
+            }
+            else if (Name.Contains("enemy_weapon"))
+            {
+                this.Attribute_Health = GameProperties.EnemyAttribute_EnemyWP_Health;
+                this.Attribute_Attack = GameProperties.EnemyAttribute_EnemyWP_Attack;
+                this.Attribute_Science = GameProperties.EnemyAttributeDefaultScience;
+                this.GetComponent<EnemyAttacker>().MoveFactor = GameProperties.EnemyMoveFactor_EnemyWP;
+            }
+            else if (Name.Contains("enemy"))
+            {
+                this.Attribute_Health = GameProperties.EnemyAttribute_Enemy_Health;
+                this.Attribute_Attack = GameProperties.EnemyAttribute_Enemy_Attack;
+                this.Attribute_Science = GameProperties.EnemyAttributeDefaultScience;
+                this.GetComponent<EnemyAttacker>().MoveFactor = GameProperties.EnemyMoveFactor_Enemy;
+            }
         }
         CurrenteHealth = AttributeConverter.GetMaxHealthFromAttribute(Attribute_Health, this.tag != "Units");
         HealthMax = AttributeConverter.GetMaxHealthFromAttribute(Attribute_Health, this.tag != "Units");

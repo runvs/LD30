@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: e30576b9a60ecd24f8e920714b52d8de
+guid: 274df6f1189be5244b0f457d74637c17
 TextureImporter:
   fileIDToRecycleName:
-    21300000: badguy
+    21300000: bug
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

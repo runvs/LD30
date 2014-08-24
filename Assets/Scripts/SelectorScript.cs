@@ -19,6 +19,16 @@ public class SelectorScript : MonoBehaviour {
         Debug.Log("You clicked me!");
 
         GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().AddSelection(gameObject.GetComponent<UnitScript>().Name);
-        GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer+= 0.5f;
+        GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer+= 0.15f;
+    }
+
+    void OnMouseEnter()
+    {
+        GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetSelect();
+    }
+
+    void OnMouseExit()
+    {
+        GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetNormal();
     }
 }

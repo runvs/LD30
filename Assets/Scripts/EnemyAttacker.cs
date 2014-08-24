@@ -6,7 +6,8 @@ public class EnemyAttacker : MonoBehaviour
 
     private float AttackTimer;
     public GameObject Target;
-    private float MinimalRange = GameProperties.EnemyAttackMinimalRange;
+    private float minimalRange = GameProperties.EnemyAttackMinimalRange;
+    public float MoveFactor = 1.0f;
 
     Rigidbody2D rgdb2d;
 
@@ -15,7 +16,9 @@ public class EnemyAttacker : MonoBehaviour
     {
         rgdb2d = this.gameObject.GetComponent<Rigidbody2D>();
         UnitTargetEvenetManager.OnDelete += RemoveTarget;
-        this.GetComponent<HealthController>().GetVariables();
+        this.GetComponent<AttackTarget>().SetNames();
+        this.GetComponent<HealthController>().GetVariables(this.GetComponent<AttackTarget>().Name);
+
     }
 
     private void RemoveTarget(string name)
@@ -36,7 +39,7 @@ public class EnemyAttacker : MonoBehaviour
             if (difference.magnitude >= 0.5f)
             {
                 //Debug.Log(CurrentPosition + " " + TargetPosition + " " + difference);
-                rgdb2d.AddForce(difference.normalized * GameProperties.EnemyMoveFactor);
+                rgdb2d.AddForce(difference.normalized * MoveFactor);
             }
             else
             {
@@ -49,9 +52,12 @@ public class EnemyAttacker : MonoBehaviour
         else
         {
             Target = GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().GetUnitClosestTo(this.transform.position);
-            if ((Target.transform.position - this.transform.position).magnitude > MinimalRange)
+            if (Target)
             {
-                Target = null;
+                if ((Target.transform.position - this.transform.position).magnitude > minimalRange)
+                {
+                    Target = null;
+                }
             }
         }
 

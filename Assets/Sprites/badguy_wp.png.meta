@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: e30576b9a60ecd24f8e920714b52d8de
+guid: ba21127d8715be64f968a28681ddf20d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: badguy
+    21300000: badguy_wp
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
