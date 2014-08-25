@@ -163,16 +163,16 @@ public class GameController : MonoBehaviour
     private void CreateMapDebriefingText()
     {
         MapDebriefingText = new Dictionary<string, string>();
-        MapDebriefingText.Add("DesertCanyon", "The Bridging Technology works fine..."); // blablabla
-        MapDebriefingText.Add("AlienBase", "To Be Done1");
-        MapDebriefingText.Add("GreatPlains", "To Be Done2");
-        MapDebriefingText.Add("MotherShip", "To Be Done3");
+        MapDebriefingText.Add("DesertCanyon", "The artefact you recovered is unlike anything we have ever seen. It seems like it inherits some kind of mechanism to open up bridges between planets. Our guys just need to figure it out, visit them in the lab!"); // blablabla
+        MapDebriefingText.Add("AlienBase", "Good thing you made it out of there alive. On the bright side the new data you stumbled upon really helps understanding the artefact's powers. Keep up the good work.");
+        MapDebriefingText.Add("GreatPlains", "Great job. Everyone is very excited, as we get offers from the government to recover more artefacts. Get to it.");
+        MapDebriefingText.Add("MotherShip", "One hour ago a large alien ship came to one of our bridges. They look angry. Do something about it.");
 
         MapBriefingText = new Dictionary<string, string>();
-        MapBriefingText.Add("DesertCanyon", "While our Scientists investigate the data you rescued from the temple, we discovered another world to travel to. There we found signs of intelligent life. Be prepared!"); // blabla
-        MapBriefingText.Add("AlienBase", "To Be Done1"); // blabla
-        MapBriefingText.Add("GreatPlains", "To Be Done2"); // blabla
-        MapBriefingText.Add("MotherShip", "To Be Done3"); // blabla
+        MapBriefingText.Add("DesertCanyon", "While our Scientists investigated the data you rescued from the temple, we discovered another inhabitable world. Our exploration drone was downed, prepare yourself!"); // blabla
+        MapBriefingText.Add("AlienBase", "We found the source of that alien aggressors. You have got to take care of them. Bonus payments to your retirement fond if you succeed."); // blabla
+        MapBriefingText.Add("GreatPlains", "Well done, we will assign you employee of the month. Oh but it's all top secret, so don't to anyone about it."); // blabla
+        MapBriefingText.Add("MotherShip", "That was the last one of them. We have to be more careful with those bridges. Never mind there are more planets to conquer."); // blabla
 
         MapNextLevelName = new Dictionary<string, string>();
         MapNextLevelName.Add("AncientTemple", "DesertCanyon");
