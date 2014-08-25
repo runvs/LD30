@@ -13,7 +13,9 @@ public class GameController : MonoBehaviour
     public bool Tier2Available = false;
     public bool Tier3Available = false;
 
-    public static bool IsAtBase = true;
+    public static bool IsAtBase { get { return (Application.loadedLevelName == "Headquarters" || Application.loadedLevelName == "Menu"); } }
+
+    public static bool LastLevelWasSuccessful;
 
     #region Debriefing Stuff
 
@@ -77,7 +79,8 @@ public class GameController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         CreateMapDebriefingText();
-        NextLevelName = "AncientTemple";
+        NextLevelName = "DesertCanyon";
+        LastLevelWasSuccessful = true;
     }
 
 
@@ -127,8 +130,9 @@ public class GameController : MonoBehaviour
     public void ResetGame(bool success)
     {
         // back at base
-        IsAtBase = true;
-        NextLevel();
+        //IsAtBase = true;
+        Application.LoadLevel("Headquarters");
+
         // destroy Units
         foreach (GameObject u in GameObject.FindGameObjectsWithTag("Units"))
         {
@@ -142,6 +146,12 @@ public class GameController : MonoBehaviour
 
             GainedResearchPoints += 15;
             ResearchPointsAdd(15);
+            NextLevel();    // if the player was not successful, play the same level again
+            LastLevelWasSuccessful = true;
+        }
+        else
+        {
+            LastLevelWasSuccessful = false;
         }
 
         foreach (var go in GameObject.FindGameObjectsWithTag("Shots"))
@@ -188,11 +198,11 @@ public class GameController : MonoBehaviour
     // for Selecting the next Level String
     private Dictionary<string, string> MapNextLevelName;
 
-    public string NextLevelName { get; set; }
+    public static string NextLevelName { get; set; }
 
-    public void NextLevel()
+    private void NextLevel()
     {
         NextLevelName = MapNextLevelName[NextLevelName];
-        Application.LoadLevel("Headquarters");
+
     }
 }

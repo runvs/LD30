@@ -24,10 +24,8 @@ public class UIHelper : MonoBehaviour
 
     public void StartMission(string missionName)
     {
-
         // TODO Get Position from Script or move Level so it starts at 0,0,0
         Vector3 position = new Vector3(0, 0, 0);
-
 
         foreach (var s in GameController.SelectedTeamMembers)
         {
@@ -36,8 +34,11 @@ public class UIHelper : MonoBehaviour
             guy.GetComponent<HealthController>().GetVariables(s);
         }
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMissionMusic();
+
+        missionName = GameController.NextLevelName;
+
         Application.LoadLevel(missionName);
 
-        GameController.IsAtBase = false;
+        //GameController.IsAtBase = false;
     }
 }

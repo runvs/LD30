@@ -873,8 +873,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: .699999988
-  m_Text: "A Game by \nJulian @Thunraz Dinges \nSimon @Laguna_999 Weis\nwith proud
-    support of Marvin @mawyn Rempe\n\nPlease Visit us on http://runvs.io"
+  m_Text: "A Game by \nJulian @Thunraz Dinges \nSimon @Laguna_999 Weis\nwith support
+    of Marvin @mawyn Rempe\n\nPlease Visit us on http://runvs.io"
 --- !u!222 &1714977381
 CanvasRenderer:
   m_ObjectHideFlags: 0

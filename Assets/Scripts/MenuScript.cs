@@ -43,6 +43,8 @@ public class MenuScript : MonoBehaviour
         Instantiate(CursorManager);
         GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetNormal();
 
+        Instantiate(GameController);
+
     }
 
     public GameObject Guy;
@@ -60,7 +62,7 @@ public class MenuScript : MonoBehaviour
         Instantiate(UnitProperties);
         Instantiate(BattleSystem);
         Instantiate(UnitSelector);
-        Instantiate(GameController);
+
 
 
         // Spawn three Units
@@ -79,7 +81,7 @@ public class MenuScript : MonoBehaviour
         guy3.GetComponent<HealthController>().GetVariables("Jack");
 
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMissionMusic();
-        Application.LoadLevel("AncientTemple");
+        Application.LoadLevel(GameController.NextLevelName);
 
 
 

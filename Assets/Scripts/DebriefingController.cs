@@ -92,6 +92,13 @@ public class DebriefingController : MonoBehaviour
         _killedEnemies.text = _gameController.KilledEnemies.ToString();
         _total.text = _gameController.TotalValue.ToString();
         _researchPoints.text = _gameController.GainedResearchPoints.ToString();
-        _debriefingText.text = _gameController.DebriefingText;
+        if (GameController.LastLevelWasSuccessful)
+        {
+            _debriefingText.text = _gameController.DebriefingText;
+        }
+        else
+        {
+            _debriefingText.text = "You did not succeed in completing your mission.";
+        }
     }
 }
