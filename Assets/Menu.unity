@@ -763,7 +763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1145240605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,6 +1047,8 @@ MonoBehaviour:
   UnitSelector: {fileID: 11400000, guid: 7579904e23bce0f4d8ad369a4db72c9b, type: 2}
   CursorManager: {fileID: 11400000, guid: 8ed80b58016fc1843804223f3cff029d, type: 2}
   GameController: {fileID: 11400000, guid: d0912249cfb1e9849aa1b5ec7e7b26ac, type: 2}
+  MainUICanvas: {fileID: 22300000, guid: 7b49056089702ab4b88b14e3d9d5b1c2, type: 2}
+  EventSystem: {fileID: 100000, guid: 9bd1c5415031e22419646c1a683c2df8, type: 2}
 --- !u!4 &1954469113
 Transform:
   m_ObjectHideFlags: 0

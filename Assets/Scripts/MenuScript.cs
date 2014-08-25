@@ -54,6 +54,9 @@ public class MenuScript : MonoBehaviour
     public UnitSelector UnitSelector;
     public CursorManager CursorManager;
     public GameController GameController;
+    public Canvas MainUICanvas;
+    public GameObject EventSystem;
+
 
     public void StartGame()
     {
@@ -62,6 +65,8 @@ public class MenuScript : MonoBehaviour
         Instantiate(UnitProperties);
         Instantiate(BattleSystem);
         Instantiate(UnitSelector);
+        Instantiate(MainUICanvas);
+        Instantiate(EventSystem);
 
 
 
