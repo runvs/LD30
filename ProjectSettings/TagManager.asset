@@ -26,6 +26,7 @@ TagManager:
   - Hud
   - MothershipShield
   - CanvasQuitDisplay
+  - UnlockTierButton
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

@@ -16,19 +16,17 @@ public class TeamSelection : MonoBehaviour
 
             var gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
-            if (Tier == 2)
+            if (Tier == 2 && !gc.Tier2Available)
             {
-                if (!gc.Tier2Available)
-                {
-                    toggle.interactable = false;
-                }
+                toggle.interactable = false;
             }
-            else if (Tier == 3)
+            else if (Tier == 3 && !gc.Tier3Available)
             {
-                if (!gc.Tier3Available)
-                {
-                    toggle.interactable = false;
-                }
+                toggle.interactable = false;
+            }
+            else
+            {
+                toggle.interactable = true;
             }
 
             if (GameController.DeadUnits.Contains(TeamMemberName))

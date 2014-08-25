@@ -56,6 +56,8 @@ public static class GameProperties
 
     public static float EnemyAttributeDefaultScience { get { return 0.0f; } }
 
-
     public static float ForceFieldDamage { get { return 5.0f; } }
+
+    public static int Tier2Cost { get { return 15; } }
+    public static int Tier3Cost { get { return 20; } }
 }
