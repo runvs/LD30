@@ -30,6 +30,22 @@ public class TeamSelection : MonoBehaviour
                     toggle.interactable = false;
                 }
             }
+
+            if (GameController.DeadUnits.Contains(TeamMemberName))
+            {
+                toggle.interactable = false;
+            }
+        }
+        else
+        {
+            if (GameController.DeadUnits.Contains(TeamMemberName))
+            {
+                var buttons = gameObject.GetComponentsInChildren<Button>();
+                foreach (var button in buttons)
+                {
+                    button.enabled = false;
+                }
+            }
         }
 
         var description = transform.FindChild("TeamMemberDescription").GetComponent<Text>();
