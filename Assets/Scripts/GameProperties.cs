@@ -13,17 +13,17 @@ public static class GameProperties
     public static float EnemyAttackTimerMax { get { return 1.1f; } }
 
     public static int StartingMoney { get { return 2500; } }
-    public static int StartingResearchPoints { get { return 10; } }
+    public static int StartingResearchPoints { get { return 5; } }
     public static int BaseAttributeCosts { get { return 5000; } }
     public static float AttributeIncreaseValue { get { return 0.05f; } }
 
     public static int EnemyKillMoneyReward { get { return 37; } }
     public static int UnitLostMoneyFine { get { return 500; } }
 
-    public static int FoundArtifactRPReward { get { return 15; } }
+    public static int FoundArtifactRPReward { get { return 6; } }
     public static int FoundArtifactMoneyReward { get { return 1500; } }
 
-    public static int FoundSmallArtifactRPReward { get { return 5; } }
+    public static int FoundSmallArtifactRPReward { get { return 4; } }
     public static int FoundSmallArtifactMoneyReward { get { return 200; } }
 
     public static float UnitAttackMinimalRange { get { return 2.5f; } }

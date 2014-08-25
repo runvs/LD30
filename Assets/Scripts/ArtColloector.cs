@@ -23,12 +23,15 @@ public class ArtColloector : MonoBehaviour
             synth.parameters.SetSettingsString("1,.5,,.324,,.569,,.2933,,.3784,,,,,,,,,,,,,.6636,,,1,,,,,,");
             synth.PlayMutated();
 
+            var gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().ResearchPointsAdd(GameProperties.FoundSmallArtifactRPReward);
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GainedResearchPoints += 5;
+            gc.ResearchPointsAdd(GameProperties.FoundSmallArtifactRPReward);
+            gc.GainedResearchPoints += 5;
+
+            gc.MoneyAdd(GameProperties.FoundSmallArtifactMoneyReward);
+            gc.FoundArtefacts += GameProperties.FoundSmallArtifactMoneyReward;
+
             Destroy(this.gameObject);
-
-
 
         }
     }
