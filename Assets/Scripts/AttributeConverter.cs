@@ -5,13 +5,13 @@ public static class AttributeConverter
 {
     public static float GetMaxHealthFromAttribute(float AttributeHealth, bool Enemy)
     {
-        float retVal = (AttributeHealth * (5.0f + (Enemy ? 0.0f : 1.0f)));
+        float retVal = (AttributeHealth * (5.0f + (Enemy ? 0.75f : 1.0f)));
         return retVal;
     }
 
     public static float GetAttackDamageFromAttribute(float AttributeAttack, bool Enemy)
     {
-        float retVal = (AttributeAttack * (1.2f + (Enemy ? 0.0f : 1.0f)));
+        float retVal = (AttributeAttack * (1.2f + (Enemy ? 0.75f : 1.0f)));
         return retVal;
     }
 

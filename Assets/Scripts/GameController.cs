@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         CreateMapDebriefingText();
-        NextLevelName = "AncientTemple";
+        NextLevelName = "AlienBase";
         LastLevelWasSuccessful = true;
 
 
