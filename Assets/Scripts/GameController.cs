@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         CreateMapDebriefingText();
-        NextLevelName = "Mothership";
+        NextLevelName = "AncientTemple";
         LastLevelWasSuccessful = true;
 
 
@@ -153,6 +153,10 @@ public class GameController : MonoBehaviour
         {
             Destroy(u);
         }
+        foreach (var go in GameObject.FindGameObjectsWithTag("Shots"))
+        {
+            Destroy(go);
+        }
 
         if (success)
         {
@@ -169,10 +173,7 @@ public class GameController : MonoBehaviour
             LastLevelWasSuccessful = false;
         }
 
-        foreach (var go in GameObject.FindGameObjectsWithTag("Shots"))
-        {
-            Destroy(go);
-        }
+
         //Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));    // this will be kept
         MoneyRemove(FixedCosts);
 
@@ -189,6 +190,17 @@ public class GameController : MonoBehaviour
 
     internal void NowReallyQuit()
     {
+
+        // destroy Units
+        foreach (GameObject u in GameObject.FindGameObjectsWithTag("Units"))
+        {
+            Destroy(u);
+        }
+        foreach (var go in GameObject.FindGameObjectsWithTag("Shots"))
+        {
+            Destroy(go);
+        }
+
         Application.LoadLevel("Menu");
         Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));    // this will be kept
         Destroy(GameObject.FindGameObjectWithTag("bgm"));

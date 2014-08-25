@@ -9,6 +9,9 @@ public class UnitSelector : MonoBehaviour
 
     TutorialScript tut;
 
+    Vector3 MousePressdPosition;
+
+
     public int NumberOfSelectedUnits()
     {
         return SelectedUnits.Count;
@@ -51,6 +54,12 @@ public class UnitSelector : MonoBehaviour
         }
         else
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 v3 = Input.mousePosition;
+                v3.z = 10.0f;
+                MousePressdPosition = Camera.main.ScreenToWorldPoint(v3);
+            }
             if (Input.GetMouseButtonUp(0))
             {
                 if (SelectedUnits.Count != 0)
@@ -81,6 +90,29 @@ public class UnitSelector : MonoBehaviour
                         }
                     }
                 }
+                else
+                {
+                    Vector3 v3 = Input.mousePosition;
+                    v3.z = 10.0f;
+                    v3 = Camera.main.ScreenToWorldPoint(v3);
+
+                    Vector3 min = new Vector3(Mathf.Min(v3.x, MousePressdPosition.x), Mathf.Min(v3.y, MousePressdPosition.y), 0);
+                    Vector3 max = new Vector3(Mathf.Max(v3.x, MousePressdPosition.x), Mathf.Max(v3.y, MousePressdPosition.y), 0);
+
+                    Vector3 dif = max - min;
+
+                    Rect mouserect = new Rect(min.x, min.y, dif.x, dif.y);
+                    GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+                    foreach (var o in units)
+                    {
+                        if (mouserect.Contains(o.transform.position))
+                        {
+                            UnitScript u = o.GetComponent<UnitScript>();
+                            AddSelection(u.Name);
+                        }
+                    }
+                }
+
             }
             if (Input.GetMouseButtonUp(1))
             {
