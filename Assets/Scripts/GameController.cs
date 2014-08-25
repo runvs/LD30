@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         CreateMapDebriefingText();
-        NextLevelName = "Mothership";
+        NextLevelName = "AncientTemple";
         LastLevelWasSuccessful = true;
 
 
