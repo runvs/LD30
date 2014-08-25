@@ -1087,7 +1087,6 @@ GameObject:
   - 224: {fileID: 56779172}
   - 222: {fileID: 56779175}
   - 114: {fileID: 56779174}
-  - 114: {fileID: 56779173}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -1112,18 +1111,6 @@ RectTransform:
   m_AnchoredPosition: {x: 25, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &56779173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 56779171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!114 &56779174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16629,7 +16616,6 @@ GameObject:
   - 224: {fileID: 646256348}
   - 222: {fileID: 646256352}
   - 114: {fileID: 646256351}
-  - 114: {fileID: 646256350}
   - 114: {fileID: 646256349}
   m_Layer: 8
   m_Name: TeamMember
@@ -16672,52 +16658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeamMemberName: Brunhilde
   Tier: 2
-  IsInExercise: 0
---- !u!114 &646256350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 646256347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .501960814, g: .501960814, b: .501960814, a: .698039234}
-    m_PressedColor: {r: 1, g: .345098048, b: .345098048, a: .698039234}
-    m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 646256351}
-  m_Interactable: 1
-  toggleTransition: 1
-  graphic: {fileID: 1603591903}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  IsInExercise: 1
 --- !u!114 &646256351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20279,7 +20220,6 @@ GameObject:
   - 224: {fileID: 805905406}
   - 222: {fileID: 805905410}
   - 114: {fileID: 805905409}
-  - 114: {fileID: 805905408}
   - 114: {fileID: 805905407}
   m_Layer: 8
   m_Name: TeamMember
@@ -20322,52 +20262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeamMemberName: Titus
   Tier: 2
-  IsInExercise: 0
---- !u!114 &805905408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805905405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .501960814, g: .501960814, b: .501960814, a: .698039234}
-    m_PressedColor: {r: 1, g: .345098048, b: .345098048, a: .698039234}
-    m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 805905409}
-  m_Interactable: 1
-  toggleTransition: 1
-  graphic: {fileID: 1086103465}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  IsInExercise: 1
 --- !u!114 &805905409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24462,7 +24357,6 @@ GameObject:
   - 224: {fileID: 967092880}
   - 222: {fileID: 967092883}
   - 114: {fileID: 967092881}
-  - 114: {fileID: 967092882}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -24508,18 +24402,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &967092882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967092879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!222 &967092883
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27229,7 +27111,6 @@ GameObject:
   - 224: {fileID: 1080559566}
   - 222: {fileID: 1080559569}
   - 114: {fileID: 1080559568}
-  - 114: {fileID: 1080559567}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -27254,18 +27135,6 @@ RectTransform:
   m_AnchoredPosition: {x: 25, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1080559567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1080559565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!114 &1080559568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27460,7 +27329,6 @@ GameObject:
   - 224: {fileID: 1086103464}
   - 222: {fileID: 1086103467}
   - 114: {fileID: 1086103465}
-  - 114: {fileID: 1086103466}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -27506,18 +27374,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &1086103466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1086103463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!222 &1086103467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35838,7 +35694,6 @@ GameObject:
   - 224: {fileID: 1351205180}
   - 222: {fileID: 1351205184}
   - 114: {fileID: 1351205183}
-  - 114: {fileID: 1351205182}
   - 114: {fileID: 1351205181}
   m_Layer: 8
   m_Name: TeamMember
@@ -35881,52 +35736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeamMemberName: Dingo
   Tier: 3
-  IsInExercise: 0
---- !u!114 &1351205182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1351205179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .501960814, g: .501960814, b: .501960814, a: .698039234}
-    m_PressedColor: {r: 1, g: .345098048, b: .345098048, a: .698039234}
-    m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 1351205183}
-  m_Interactable: 1
-  toggleTransition: 1
-  graphic: {fileID: 56779174}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  IsInExercise: 1
 --- !u!114 &1351205183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37995,7 +37805,6 @@ GameObject:
   - 224: {fileID: 1412532971}
   - 222: {fileID: 1412532975}
   - 114: {fileID: 1412532974}
-  - 114: {fileID: 1412532973}
   - 114: {fileID: 1412532972}
   m_Layer: 8
   m_Name: TeamMember
@@ -38038,52 +37847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeamMemberName: Brutus
   Tier: 3
-  IsInExercise: 0
---- !u!114 &1412532973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1412532970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .501960814, g: .501960814, b: .501960814, a: .698039234}
-    m_PressedColor: {r: 1, g: .345098048, b: .345098048, a: .698039234}
-    m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 1412532974}
-  m_Interactable: 1
-  toggleTransition: 1
-  graphic: {fileID: 1633326865}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  IsInExercise: 1
 --- !u!114 &1412532974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43243,7 +43007,6 @@ GameObject:
   - 224: {fileID: 1603591902}
   - 222: {fileID: 1603591905}
   - 114: {fileID: 1603591903}
-  - 114: {fileID: 1603591904}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -43289,18 +43052,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &1603591904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1603591901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!222 &1603591905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44562,7 +44313,6 @@ GameObject:
   - 224: {fileID: 1633326863}
   - 222: {fileID: 1633326866}
   - 114: {fileID: 1633326865}
-  - 114: {fileID: 1633326864}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -44587,18 +44337,6 @@ RectTransform:
   m_AnchoredPosition: {x: 25, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1633326864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1633326862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!114 &1633326865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45623,7 +45361,6 @@ GameObject:
   - 224: {fileID: 1658912145}
   - 222: {fileID: 1658912149}
   - 114: {fileID: 1658912148}
-  - 114: {fileID: 1658912147}
   - 114: {fileID: 1658912146}
   m_Layer: 8
   m_Name: TeamMember
@@ -45666,52 +45403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeamMemberName: Rusty
   Tier: 2
-  IsInExercise: 0
---- !u!114 &1658912147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1658912144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .501960814, g: .501960814, b: .501960814, a: .698039234}
-    m_PressedColor: {r: 1, g: .345098048, b: .345098048, a: .698039234}
-    m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 1658912148}
-  m_Interactable: 1
-  toggleTransition: 1
-  graphic: {fileID: 1942174923}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  IsInExercise: 1
 --- !u!114 &1658912148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52878,7 +52570,6 @@ GameObject:
   - 224: {fileID: 1862622391}
   - 222: {fileID: 1862622394}
   - 114: {fileID: 1862622392}
-  - 114: {fileID: 1862622393}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -52924,18 +52615,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &1862622393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1862622390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!222 &1862622394
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54451,7 +54130,6 @@ GameObject:
   - 224: {fileID: 1942174922}
   - 222: {fileID: 1942174925}
   - 114: {fileID: 1942174923}
-  - 114: {fileID: 1942174924}
   m_Layer: 8
   m_Name: TeamMemberImage
   m_TagString: Untagged
@@ -54497,18 +54175,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &1942174924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1942174921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
 --- !u!222 &1942174925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60015,7 +59681,6 @@ GameObject:
   - 224: {fileID: 2124323012}
   - 222: {fileID: 2124323016}
   - 114: {fileID: 2124323015}
-  - 114: {fileID: 2124323014}
   - 114: {fileID: 2124323013}
   m_Layer: 8
   m_Name: TeamMember
@@ -60058,52 +59723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TeamMemberName: Siren
   Tier: 3
-  IsInExercise: 0
---- !u!114 &2124323014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2124323011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 2109663825, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: .501960814, g: .501960814, b: .501960814, a: .501960814}
-    m_HighlightedColor: {r: .501960814, g: .501960814, b: .501960814, a: .698039234}
-    m_PressedColor: {r: 1, g: .345098048, b: .345098048, a: .698039234}
-    m_DisabledColor: {r: .250980407, g: .250980407, b: .250980407, a: .501960814}
-    m_ColorMultiplier: 2
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 2124323015}
-  m_Interactable: 1
-  toggleTransition: 1
-  graphic: {fileID: 1862622392}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  IsInExercise: 1
 --- !u!114 &2124323015
 MonoBehaviour:
   m_ObjectHideFlags: 0
