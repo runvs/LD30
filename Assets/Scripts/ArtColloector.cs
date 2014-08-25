@@ -19,9 +19,20 @@ public class ArtColloector : MonoBehaviour
     {
         if (coll.tag == "Units")
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().ResearchPointsAdd(GameProperties.FoundSmallArtifactRPReward);
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GainedResearchPoints += 5;
+            SfxrSynth synth = new SfxrSynth();
+            synth.parameters.SetSettingsString("1,.5,,.324,,.569,,.2933,,.3784,,,,,,,,,,,,,.6636,,,1,,,,,,");
+            synth.PlayMutated();
+
+            var gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
+            gc.ResearchPointsAdd(GameProperties.FoundSmallArtifactRPReward);
+            gc.GainedResearchPoints += 5;
+
+            gc.MoneyAdd(GameProperties.FoundSmallArtifactMoneyReward);
+            gc.FoundArtefacts += GameProperties.FoundSmallArtifactMoneyReward;
+
             Destroy(this.gameObject);
+
         }
     }
 }

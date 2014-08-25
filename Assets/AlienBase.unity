@@ -2245,7 +2245,7 @@ GameObject:
   - 50: {fileID: 43285807}
   - 114: {fileID: 43285806}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14282,7 +14282,7 @@ GameObject:
   - 50: {fileID: 266419918}
   - 114: {fileID: 266419917}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19963,7 +19963,7 @@ GameObject:
   - 50: {fileID: 369712771}
   - 114: {fileID: 369712770}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25578,7 +25578,7 @@ GameObject:
   - 50: {fileID: 476367980}
   - 114: {fileID: 476367979}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25799,7 +25799,7 @@ GameObject:
   - 50: {fileID: 478474188}
   - 114: {fileID: 478474187}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41487,7 +41487,7 @@ GameObject:
   - 50: {fileID: 784148757}
   - 114: {fileID: 784148756}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48269,7 +48269,7 @@ GameObject:
   - 50: {fileID: 906933388}
   - 114: {fileID: 906933387}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51750,7 +51750,7 @@ GameObject:
   - 50: {fileID: 967299014}
   - 114: {fileID: 967299013}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71456,7 +71456,7 @@ GameObject:
   - 50: {fileID: 1319396493}
   - 114: {fileID: 1319396492}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85968,7 +85968,7 @@ GameObject:
   - 50: {fileID: 1573203097}
   - 114: {fileID: 1573203096}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98134,7 +98134,7 @@ GameObject:
   - 50: {fileID: 1811136363}
   - 114: {fileID: 1811136362}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100597,7 +100597,7 @@ GameObject:
   - 50: {fileID: 1847584923}
   - 114: {fileID: 1847584922}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107789,7 +107789,7 @@ GameObject:
   - 50: {fileID: 1969774641}
   - 114: {fileID: 1969774640}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113336,7 +113336,7 @@ GameObject:
   - 50: {fileID: 2064773279}
   - 114: {fileID: 2064773278}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113992,7 +113992,7 @@ GameObject:
   - 50: {fileID: 2073671241}
   - 114: {fileID: 2073671240}
   m_Layer: 15
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: BadGuys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
