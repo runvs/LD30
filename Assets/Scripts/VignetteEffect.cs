@@ -25,8 +25,6 @@ public class VignetteEffect : MonoBehaviour
         col = Color.black;
         VignetteEffectTexture = new Texture2D((int)Resolution.x, (int)Resolution.y);
 
-
-
         float distanceToCenterMax = Mathf.Sqrt(centerPosition.x * centerPosition.x + centerPosition.y * centerPosition.y);
 
         for (int i = 0; i <= Resolution.x; i++)

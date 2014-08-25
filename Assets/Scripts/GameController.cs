@@ -81,7 +81,18 @@ public class GameController : MonoBehaviour
         CreateMapDebriefingText();
         NextLevelName = "AncientTemple";
         LastLevelWasSuccessful = true;
+
+
+        UnitTargetEvenetManager.OnDelete += DeadUnitList;
+        DeadUnits = new List<string>();
     }
+
+    private void DeadUnitList(string name)
+    {
+        DeadUnits.Add(name);
+    }
+
+    List<string> DeadUnits;
 
 
 
