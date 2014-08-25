@@ -36,6 +36,7 @@ public class UnitProperties : MonoBehaviour
 
     public int CalculateCosts(string name, string attribute)
     {
+        //Debug.Log("Name :" + name);
         if (attribute.ToLower() == "health")
         {
             return (int)((TeamMembers[name].Health + GameProperties.AttributeIncreaseValue) * GameProperties.BaseAttributeCosts);

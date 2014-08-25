@@ -73,6 +73,9 @@ public class DebriefingController : MonoBehaviour
         }
 
         #endregion
+
+        SetValues();
+        GetComponentInParent<Canvas>().enabled = true;
     }
 
     public void SetValues()

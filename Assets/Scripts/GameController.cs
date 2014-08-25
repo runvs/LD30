@@ -150,16 +150,8 @@ public class GameController : MonoBehaviour
         }
         Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
         MoneyRemove(FixedCosts);
+
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
-        GameObject debriefObject = GameObject.FindGameObjectWithTag("DebriefingController");
-        DebriefingController dc = debriefObject.GetComponent<DebriefingController>();
-        dc.SetValues();
-        dc.GetComponentInParent<Canvas>().enabled = true;
-
-
-
-
-
 
     }
 
