@@ -40,20 +40,20 @@ public static class GameProperties
     public static float MinFixedCostsRange { get { return 0.01f; } }
     public static float MaxFixedCostsRange { get { return 0.09f; } }
 
-    public static float EnemyAttribute_Bug_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f, +0.15f); } }
-    public static float EnemyAttribute_Bug_Attack { get { return 0.25f + UnityEngine.Random.Range(-0.05f, 0.5f); } }
+    public static float EnemyAttribute_Bug_Health { get { return 0.20f + UnityEngine.Random.Range(-0.05f, +0.05f); } }
+    public static float EnemyAttribute_Bug_Attack { get { return 0.10f + UnityEngine.Random.Range(-0.05f, 0.05f); } }
     public static float EnemyMoveFactor_Bug { get { return 6.0f; } }
 
-    public static float EnemyAttribute_BugFast_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f, +0.15f); } }
-    public static float EnemyAttribute_BugFast_Attack { get { return 0.25f + UnityEngine.Random.Range(-0.05f, 0.5f); } }
-    public static float EnemyMoveFactor_BugFast { get { return 9.0f; } }
+    public static float EnemyAttribute_BugFast_Health { get { return 0.15f + UnityEngine.Random.Range(-0.05f, +0.05f); } }
+    public static float EnemyAttribute_BugFast_Attack { get { return 0.35f + UnityEngine.Random.Range(-0.05f, 0.05f); } }
+    public static float EnemyMoveFactor_BugFast { get { return 10.0f; } }
 
-    public static float EnemyAttribute_Enemy_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f, +0.15f); } }
-    public static float EnemyAttribute_Enemy_Attack { get { return 0.25f + UnityEngine.Random.Range(-0.05f, 0.5f); } }
+    public static float EnemyAttribute_Enemy_Health { get { return 0.5f + UnityEngine.Random.Range(-0.05f, +0.05f); } }
+    public static float EnemyAttribute_Enemy_Attack { get { return 0.55f + UnityEngine.Random.Range(-0.05f, 0.05f); } }
     public static float EnemyMoveFactor_Enemy { get { return 7.0f; } }
 
-    public static float EnemyAttribute_EnemyWP_Health { get { return 0.75f + UnityEngine.Random.Range(-0.5f, +0.15f); } }
-    public static float EnemyAttribute_EnemyWP_Attack { get { return 0.25f + UnityEngine.Random.Range(-0.05f, 0.5f); } }
+    public static float EnemyAttribute_EnemyWP_Health { get { return 0.55f + UnityEngine.Random.Range(-0.05f, +0.55f); } }
+    public static float EnemyAttribute_EnemyWP_Attack { get { return 0.75f + UnityEngine.Random.Range(-0.05f, 0.05f); } }
     public static float EnemyMoveFactor_EnemyWP { get { return 5.0f; } }
 
 

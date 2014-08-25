@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/DesertCanyon.unity
   - enabled: 1
     path: Assets/GreatPlains.unity
+  - enabled: 1
+    path: Assets/AlienBase.unity
+  - enabled: 1
+    path: Assets/Mothership.unity
