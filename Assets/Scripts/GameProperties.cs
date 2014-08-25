@@ -52,8 +52,8 @@ public static class GameProperties
     public static float EnemyAttribute_Enemy_Attack { get { return 0.55f + UnityEngine.Random.Range(-0.05f, 0.05f); } }
     public static float EnemyMoveFactor_Enemy { get { return 7.0f; } }
 
-    public static float EnemyAttribute_EnemyWP_Health { get { return 0.55f + UnityEngine.Random.Range(-0.05f, +0.55f); } }
-    public static float EnemyAttribute_EnemyWP_Attack { get { return 0.75f + UnityEngine.Random.Range(-0.05f, 0.05f); } }
+    public static float EnemyAttribute_EnemyWP_Health { get { return 0.95f + UnityEngine.Random.Range(-0.05f, +0.05f); } }
+    public static float EnemyAttribute_EnemyWP_Attack { get { return 0.95f + UnityEngine.Random.Range(-0.05f, 0.05f); } }
     public static float EnemyMoveFactor_EnemyWP { get { return 5.0f; } }
 
 
