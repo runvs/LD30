@@ -227,9 +227,9 @@ public class GameController : MonoBehaviour
         MapDebriefingText.Add("Mothership", "One hour ago a large alien ship came to one of our bridges. They look angry. Do something about it.");
 
         MapBriefingText = new Dictionary<string, string>();
-        MapBriefingText.Add("DesertCanyon", "While our Scientists investigated the data you recovered from the temple, we discovered another inhabitable world. Our exploration drone was downed, prepare yourself!");
+        MapBriefingText.Add("DesertCanyon", "While our scientists investigated the data you recovered from the temple, we discovered another inhabitable world. Our exploration drone was downed, prepare yourself!");
         MapBriefingText.Add("AlienBase", "We found the source of that alien aggressors. You have got to take care of them. Bonus payments to your retirement fond if you succeed.");
-        MapBriefingText.Add("GreatPlains", "Well done, we will assign you employee of the month. Oh but it's all top secret, so don't to anyone about it.");
+        MapBriefingText.Add("GreatPlains", "Well done, we will assign you employee of the month. Oh but it's all top secret, so don't talk to anyone about it.");
         MapBriefingText.Add("Mothership", "That was the last one of them. We have to be more careful with those bridges. Never mind there are more planets to conquer.");
 
         MapNextLevelName = new Dictionary<string, string>();
