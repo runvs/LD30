@@ -103,9 +103,6 @@ public class TutorialScript : MonoBehaviour
     }
 
 
-
-
-
     // show the current message without altering the Messages list
     public void ShowMessage()
     {
@@ -133,6 +130,14 @@ public class TutorialScript : MonoBehaviour
 
     public void CloseMessage()
     {
+        GetComponent<Canvas>().enabled = false;
+        GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.1f;
+    }
+
+    public void QuitTutorial()
+    {
+        this.TutorialRunning = false;
+        Messages.Clear();
         GetComponent<Canvas>().enabled = false;
         GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.1f;
     }

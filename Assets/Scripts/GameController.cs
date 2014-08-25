@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         CreateMapDebriefingText();
-        NextLevelName = "DesertCanyon";
+        NextLevelName = "AncientTemple";
         LastLevelWasSuccessful = true;
     }
 
@@ -131,7 +131,11 @@ public class GameController : MonoBehaviour
     {
         // back at base
         //IsAtBase = true;
+
         Application.LoadLevel("Headquarters");
+
+
+        GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetNormal();
 
         // destroy Units
         foreach (GameObject u in GameObject.FindGameObjectsWithTag("Units"))
@@ -162,12 +166,10 @@ public class GameController : MonoBehaviour
         MoneyRemove(FixedCosts);
 
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
-
     }
 
     public void QuitToMenu()
     {
-
     }
 
     private void CreateMapDebriefingText()
