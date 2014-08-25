@@ -181,9 +181,30 @@ public class GameController : MonoBehaviour
 
     public void QuitToMenu()
     {
+
+        CanvasQuitDisplay cqd = GameObject.FindGameObjectWithTag("CanvasQuitDisplay").GetComponent<CanvasQuitDisplay>();
+
+        cqd.ShowMessage("This is the End of WorldGate! You are awesome!");  // blabla TODO  
+    }
+
+    internal void NowReallyQuit()
+    {
+        Application.LoadLevel("Menu");
         Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));    // this will be kept
         Destroy(GameObject.FindGameObjectWithTag("bgm"));
+        Destroy(GameObject.FindGameObjectWithTag("ShotGroup"));
+
+        Destroy(GameObject.FindGameObjectWithTag("UnitProperties"));
+        Destroy(GameObject.FindGameObjectWithTag("BattleSystem"));
+        Destroy(GameObject.FindGameObjectWithTag("UnitSelector"));
+        //Destroy(GameObject.FindGameObjectWithTag("EventSystem"));
+
+        Destroy(GameObject.FindGameObjectWithTag("CursorManager"));
+        Destroy(this.gameObject);
+
+
     }
+
 
     private void CreateMapDebriefingText()
     {
@@ -220,4 +241,6 @@ public class GameController : MonoBehaviour
         NextLevelName = MapNextLevelName[NextLevelName];
 
     }
+
+
 }
