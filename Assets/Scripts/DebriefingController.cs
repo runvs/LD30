@@ -16,6 +16,7 @@ public class DebriefingController : MonoBehaviour
     Text _killedEnemies;
     Text _total;
     Text _researchPoints;
+    Text _debriefingText;
 
 
     void Start()
@@ -65,6 +66,9 @@ public class DebriefingController : MonoBehaviour
                 case "ResearchPointsValue":
                     _researchPoints = go.GetComponent<Text>();
                     break;
+                case "DebriefingText":
+                    _debriefingText = go.GetComponent<Text>();
+                    break;
             }
         }
 
@@ -85,5 +89,6 @@ public class DebriefingController : MonoBehaviour
         _killedEnemies.text = _gameController.KilledEnemies.ToString();
         _total.text = _gameController.TotalValue.ToString();
         _researchPoints.text = _gameController.GainedResearchPoints.ToString();
+        _debriefingText.text = _gameController.DebriefingText;
     }
 }
