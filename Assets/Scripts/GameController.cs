@@ -129,6 +129,8 @@ public class GameController : MonoBehaviour
 
         Application.LoadLevel("Headquarters");
 
+        SelectedTeamMembers.Clear();
+
 
         GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetNormal();
 
