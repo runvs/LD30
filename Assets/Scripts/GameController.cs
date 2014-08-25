@@ -19,44 +19,8 @@ public class GameController : MonoBehaviour
 
     #region Debriefing Stuff
 
-    public int Electricity
-    {
-        get
-        {
-            var multiplier = 1.0f;
-
-            if (Tier2Available)
-            {
-                multiplier = GameProperties.Tier2Multiplier;
-                if (Tier3Available)
-                {
-                    multiplier = GameProperties.Tier3Multiplier;
-                }
-            }
-
-            var rand = UnityEngine.Random.Range(GameProperties.MinFixedCostsRange, GameProperties.MaxFixedCostsRange);
-            return (int)Math.Floor(TotalIncome * rand * multiplier);
-        }
-    }
-    public int Water
-    {
-        get
-        {
-            var multiplier = 1.0f;
-
-            if (Tier2Available)
-            {
-                multiplier = GameProperties.Tier2Multiplier;
-                if (Tier3Available)
-                {
-                    multiplier = GameProperties.Tier3Multiplier;
-                }
-            }
-
-            var rand = UnityEngine.Random.Range(GameProperties.MinFixedCostsRange, GameProperties.MaxFixedCostsRange);
-            return (int)Math.Floor(TotalIncome * rand * multiplier);
-        }
-    }
+    public int Electricity = 0;
+    public int Water = 0;
     public int Rent { get { return GameProperties.Rent; } }
 
     public int TeamCosts = 0;
@@ -140,6 +104,27 @@ public class GameController : MonoBehaviour
 
     public void ResetGame(bool success)
     {
+        #region Set electricity/water
+
+        var multiplier = 1.0f;
+
+        if (Tier2Available)
+        {
+            multiplier = GameProperties.Tier2Multiplier;
+            if (Tier3Available)
+            {
+                multiplier = GameProperties.Tier3Multiplier;
+            }
+        }
+
+        var rand = UnityEngine.Random.Range(GameProperties.MinFixedCostsRange, GameProperties.MaxFixedCostsRange);
+        Electricity = (int)Math.Floor(TotalIncome * rand * multiplier);
+
+        rand = UnityEngine.Random.Range(GameProperties.MinFixedCostsRange, GameProperties.MaxFixedCostsRange);
+        Water = (int)Math.Floor(TotalIncome * rand * multiplier);
+
+        #endregion
+
         // back at base
         //IsAtBase = true;
 
