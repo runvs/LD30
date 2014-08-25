@@ -48,20 +48,10 @@ public class AltarAction : MonoBehaviour
     internal void SetFinished()
     {
         Debug.Log("Altar is finished.");
-        foreach (GameObject u in GameObject.FindGameObjectsWithTag("Units"))
-        {
-            Destroy(u);
-        }
-
         GameController gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        gc.FoundArtefacts += GameProperties.FoundArtifactReward;
-        gc.MoneyAdd(GameProperties.FoundArtifactReward);
 
-        gc.GainedResearchPoints += 15;
-        gc.ResearchPointsAdd(15);
+        gc.ResetGame(true);
 
-
-        Application.LoadLevel("Headquarters");
         Finished = true;
     }
 }

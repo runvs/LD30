@@ -40,6 +40,8 @@ public class MenuScript : MonoBehaviour
         menucanvas.GetComponent<Canvas>().enabled = false;
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
 
+        Instantiate(CursorManager);
+        GameObject.FindGameObjectWithTag("CursorManager").GetComponent<CursorManager>().SetNormal();
 
     }
 
@@ -53,7 +55,7 @@ public class MenuScript : MonoBehaviour
 
     public void StartGame()
     {
-        Instantiate(CursorManager);
+
         Instantiate(ShotGroup);
         Instantiate(UnitProperties);
         Instantiate(BattleSystem);

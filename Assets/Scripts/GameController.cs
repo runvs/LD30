@@ -90,7 +90,7 @@ public class GameController : MonoBehaviour
 
             if (units.Length == 0)
             {
-                ResetGame();
+                ResetGame(false);
             }
         }
     }
@@ -124,19 +124,48 @@ public class GameController : MonoBehaviour
         ResearchPoints -= amount;
     }
 
-    public void ResetGame()
+    public void ResetGame(bool success)
     {
+        // back at base
         IsAtBase = true;
+        NextLevel();
+        // destroy Units
+        foreach (GameObject u in GameObject.FindGameObjectsWithTag("Units"))
+        {
+            Destroy(u);
+        }
 
-        var dc = GameObject.FindGameObjectWithTag("DebriefingController").GetComponent<DebriefingController>();
+        if (success)
+        {
+            FoundArtefacts += GameProperties.FoundArtifactReward;
+            MoneyAdd(GameProperties.FoundArtifactReward);
+
+            GainedResearchPoints += 15;
+            ResearchPointsAdd(15);
+        }
+
+        foreach (var go in GameObject.FindGameObjectsWithTag("Shots"))
+        {
+            Destroy(go);
+        }
+        Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
+        MoneyRemove(FixedCosts);
+        GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
+        GameObject debriefObject = GameObject.FindGameObjectWithTag("DebriefingController");
+        DebriefingController dc = debriefObject.GetComponent<DebriefingController>();
         dc.SetValues();
         dc.GetComponentInParent<Canvas>().enabled = true;
 
-        MoneyRemove(FixedCosts);
 
-        Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
-        GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
-        NextLevel();
+
+
+
+
+    }
+
+    public void QuitToMenu()
+    {
+
     }
 
     private void CreateMapDebriefingText()
@@ -172,5 +201,6 @@ public class GameController : MonoBehaviour
     public void NextLevel()
     {
         NextLevelName = MapNextLevelName[NextLevelName];
+        Application.LoadLevel("Headquarters");
     }
 }
