@@ -136,6 +136,7 @@ public class GameController : MonoBehaviour
 
         Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
+        NextLevel();
     }
 
     private void CreateMapDebriefingText()
@@ -167,4 +168,9 @@ public class GameController : MonoBehaviour
     private Dictionary<string, string> MapNextLevelName;
 
     public string NextLevelName { get; set; }
+
+    public void NextLevel()
+    {
+        NextLevelName = MapNextLevelName[NextLevelName];
+    }
 }
