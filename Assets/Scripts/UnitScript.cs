@@ -18,6 +18,17 @@ public class UnitScript : MonoBehaviour
     private SpriteRenderer selectorRenderer;
 
     public string Name;
+
+
+    void Awake()
+    {
+        selectorRenderer = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        if (!selectorRenderer)
+        {
+            throw new UnityException("Unit with No Selector");
+        }
+    }
+
     // Use this for initialization
     void Start()
     {

@@ -34,6 +34,7 @@ public class UnitSelector : MonoBehaviour
         SelectedUnits = new List<string>();
         UnitTargetEvenetManager.OnDelete += RemoveFromSelection;
         DeselectAllUnits();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -284,9 +285,7 @@ public class UnitSelector : MonoBehaviour
     {
         if (NumberOfSelectedUnits() != 0)
         {
-            Debug.Log("Unit found for altar");
-            GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
-
+            //Debug.Log("Unit found for altar");
             GetUnitSelectedAndClosestTo(altar.transform.position).GetComponent<UnitScript>().SetAltar(altar);
         }
     }

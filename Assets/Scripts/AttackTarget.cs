@@ -1,33 +1,33 @@
-﻿using UnityEngine;
-using System.Collections;
-using System;
+﻿using System;
+using UnityEngine;
 
-public class AttackTarget : MonoBehaviour {
+public class AttackTarget : MonoBehaviour
+{
 
     public Texture2D AttackCursor;
     public string Name;
     // Use this for initialization
-    void Start () 
+    void Start()
     {
-      
-        
+
     }
 
     public void SetNames()
     {
-        if (this.gameObject.name == "bug")
-        {
-            Name = "bug_" + Guid.NewGuid().ToString();
-        }
-        else if (this.gameObject.name == "bug_fast")
+        if (this.gameObject.name.Contains("bug_fast"))
         {
             Name = "bug_fast" + Guid.NewGuid().ToString();
         }
-        else if (this.gameObject.name == "enemy_weapon")
+        else if (this.gameObject.name.Contains("bug"))
+        {
+            Name = "bug_" + Guid.NewGuid().ToString();
+        }
+
+        else if (this.gameObject.name.Contains("enemy_weapon"))
         {
             Name = "enemy_weapon" + Guid.NewGuid().ToString();
         }
-        else if (this.gameObject.name == "enemy")
+        else if (this.gameObject.name.Contains("enemy"))
         {
             Name = "enemy" + Guid.NewGuid().ToString();
         }
@@ -37,11 +37,11 @@ public class AttackTarget : MonoBehaviour {
         }
     }
 
-    
+
     // Update is called once per frame
-    void Update () 
+    void Update()
     {
-    
+
     }
 
     void OnMouseDown()

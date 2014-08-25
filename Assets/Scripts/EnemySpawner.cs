@@ -34,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
         //enemy.name = Identifier;
         //enemy.GetComponent<AttackTarget>().Name = Identifier;
         //Enemy.GetComponent<EnemyAttacker>().Target = PickRandomTarget();
+        Debug.Log(enemy.name);
         enemy.GetComponent<EnemyAttacker>().Target = GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().GetUnitClosestTo(this.transform.position);
     }
 

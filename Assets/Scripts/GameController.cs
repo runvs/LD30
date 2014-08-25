@@ -128,5 +128,6 @@ public class GameController : MonoBehaviour
         MoneyRemove(FixedCosts);
 
         Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
+        GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
     }
 }
