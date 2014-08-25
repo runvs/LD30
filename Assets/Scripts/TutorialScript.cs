@@ -1,9 +1,9 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialScript : MonoBehaviour {
+public class TutorialScript : MonoBehaviour
+{
 
 
     private float TutorialTimer = 5.0f;
@@ -21,7 +21,7 @@ public class TutorialScript : MonoBehaviour {
 
 
     public bool IsWaitingForDeSelectUnits { get; set; }
-    public bool HasDeSelectedUnit { get { return hasDeSelectedUnit; } set { hasDeSelectedUnit = value; if (value == true) { ShowNextMessage(); IsWaitingForDeSelectUnits = false;  IsWaitingForMoveUnit = true; } } }
+    public bool HasDeSelectedUnit { get { return hasDeSelectedUnit; } set { hasDeSelectedUnit = value; if (value == true) { ShowNextMessage(); IsWaitingForDeSelectUnits = false; IsWaitingForMoveUnit = true; } } }
     private bool hasDeSelectedUnit;
 
     public bool IsWaitingForMoveUnit { get; set; }
@@ -31,13 +31,13 @@ public class TutorialScript : MonoBehaviour {
     public bool IsMessagePresent { get { return GetComponent<Canvas>().enabled; } }
 
     List<string> Messages;
-    
+
 
     public bool IsWaitingForTimer = false;
 
 
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         Messages = new List<string>();
 
@@ -70,17 +70,17 @@ public class TutorialScript : MonoBehaviour {
         // start the tutorial right after the map has loaded
         SetTimer(0.1f);
 
-        
+
     }
 
-    public void SetTimer (float Timer)
+    public void SetTimer(float Timer)
     {
         TutorialTimer = Timer;
         IsWaitingForTimer = true;
     }
-    
+
     // Update is called once per frame
-    void Update () 
+    void Update()
     {
 
         if (IsWaitingForTimer)
@@ -90,7 +90,7 @@ public class TutorialScript : MonoBehaviour {
                 TutorialTimer -= Time.deltaTime;
                 if (TutorialTimer <= 0)
                 {
-                    
+
                     ShowNextMessage();
                     if (Messages[0].Contains("deselect"))
                     {
@@ -131,9 +131,10 @@ public class TutorialScript : MonoBehaviour {
     }
 
 
-    public void CloseMessage ()
+    public void CloseMessage()
     {
         GetComponent<Canvas>().enabled = false;
+        GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.1f;
     }
 
 }

@@ -284,9 +284,7 @@ public class UnitSelector : MonoBehaviour
     {
         if (NumberOfSelectedUnits() != 0)
         {
-            Debug.Log("Unit found for altar");
-            GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
-
+            //Debug.Log("Unit found for altar");
             GetUnitSelectedAndClosestTo(altar.transform.position).GetComponent<UnitScript>().SetAltar(altar);
         }
     }

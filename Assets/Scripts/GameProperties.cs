@@ -24,8 +24,7 @@ public static class GameProperties
     public static int UnitLostMoneyFine { get { return 500; } }
     public static int FoundArtifactReward { get { return 1500; } }
 
-    public static float UnitAttackMinimalRange { get { return 4.0f; } }
-
+    public static float UnitAttackMinimalRange { get { return 2.5f; } }
     public static float EnemyAttackMinimalRange { get { return 3.5f; } }
 
     public static int Rent { get { return 1000; } }

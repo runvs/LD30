@@ -54445,8 +54445,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2039951725}
-  - 82: {fileID: 2039951724}
   - 114: {fileID: 2039951726}
+  - 114: {fileID: 2039951727}
+  - 82: {fileID: 2039951724}
+  - 82: {fileID: 2039951728}
   m_Layer: 0
   m_Name: bgm
   m_TagString: bgm
@@ -54462,7 +54464,7 @@ AudioSource:
   m_GameObject: {fileID: 2039951723}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 7c58ed1c35532e24fa22b237966064e7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1180fb649286ede438ecd138eafd75c2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -54535,6 +54537,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d43a09b14c26d149a77cad70464f769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2039951727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039951723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606a0232060da3341b9fc48d71d8f3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicMenu: {fileID: 2039951724}
+  MusicMissions: {fileID: 2039951728}
+--- !u!82 &2039951728
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2039951723}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 018469c9666192448b1fbaaad110dfd5, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &2041053567
 Prefab:
   m_ObjectHideFlags: 0

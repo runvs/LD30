@@ -35,8 +35,9 @@ public class UIHelper : MonoBehaviour
             guy.GetComponent<UnitScript>().Name = s;
             guy.GetComponent<HealthController>().GetVariables(s);
         }
-
+        GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMissionMusic();
         Application.LoadLevel(missionName);
+
 
 
 
