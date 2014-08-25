@@ -38,9 +38,6 @@ public class UIHelper : MonoBehaviour
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMissionMusic();
         Application.LoadLevel(missionName);
 
-
-
-
         GameController.IsAtBase = false;
     }
 }

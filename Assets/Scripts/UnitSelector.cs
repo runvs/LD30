@@ -34,6 +34,7 @@ public class UnitSelector : MonoBehaviour
         SelectedUnits = new List<string>();
         UnitTargetEvenetManager.OnDelete += RemoveFromSelection;
         DeselectAllUnits();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame

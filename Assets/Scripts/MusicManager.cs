@@ -20,7 +20,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Music Mis: " + MusicMissions.isPlaying + "\t Music Men: " + MusicMenu.isPlaying);
+        // Debug.Log("Music Mis: " + MusicMissions.isPlaying + "\t Music Men: " + MusicMenu.isPlaying);
     }
 
     public void StartMenuMusic()
