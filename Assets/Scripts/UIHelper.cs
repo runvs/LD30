@@ -39,6 +39,8 @@ public class UIHelper : MonoBehaviour
 
         Application.LoadLevel(missionName);
 
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().ResetDebriefingValues();
+
         //GameController.IsAtBase = false;
     }
 }

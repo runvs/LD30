@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/AncientTemple.unity
   - enabled: 1
     path: Assets/DesertCanyon.unity
+  - enabled: 1
+    path: Assets/GreatPlains.unity

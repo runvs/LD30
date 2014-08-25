@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
         CreateMapDebriefingText();
-        NextLevelName = "AncientTemple";
+        NextLevelName = "GreatPlains";
         LastLevelWasSuccessful = true;
     }
 
@@ -145,11 +145,11 @@ public class GameController : MonoBehaviour
 
         if (success)
         {
-            FoundArtefacts += GameProperties.FoundArtifactReward;
-            MoneyAdd(GameProperties.FoundArtifactReward);
+            FoundArtefacts += GameProperties.FoundArtifactMoneyReward;
+            MoneyAdd(GameProperties.FoundArtifactMoneyReward);
 
-            GainedResearchPoints += 15;
-            ResearchPointsAdd(15);
+            GainedResearchPoints += GameProperties.FoundArtifactRPReward;
+            ResearchPointsAdd(GameProperties.FoundArtifactRPReward);
             NextLevel();    // if the player was not successful, play the same level again
             LastLevelWasSuccessful = true;
         }

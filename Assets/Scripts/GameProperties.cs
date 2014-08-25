@@ -22,10 +22,17 @@ public static class GameProperties
 
     public static int EnemyKillMoneyReward { get { return 60; } }
     public static int UnitLostMoneyFine { get { return 500; } }
-    public static int FoundArtifactReward { get { return 1500; } }
+
+    public static int FoundArtifactRPReward { get { return 15; } }
+    public static int FoundArtifactMoneyReward { get { return 1500; } }
+
+    public static int FoundSmallArtifactRPReward { get { return 5; } }
+    public static int FoundSmallArtifactMoneyReward { get { return 200; } }
 
     public static float UnitAttackMinimalRange { get { return 2.5f; } }
     public static float EnemyAttackMinimalRange { get { return 3.5f; } }
+
+
 
     public static int Rent { get { return 1000; } }
     public static float Tier2Multiplier { get { return 1.25f; } }
@@ -51,6 +58,8 @@ public static class GameProperties
 
 
     public static float EnemyAttributeDefaultScience { get { return 0.0f; } }
+
+
 
 
 
