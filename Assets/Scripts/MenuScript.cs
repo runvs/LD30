@@ -71,7 +71,7 @@ public class MenuScript : MonoBehaviour
 
 
         // Spawn three Units
-        Vector3 position = new Vector3(0, 0, 0);
+        Vector3 position = new Vector3(-25, 4, 0);
 
         GameObject guy1 = Instantiate(Guy, position, new Quaternion()) as GameObject;
         guy1.GetComponent<UnitScript>().Name = "Arthur";
