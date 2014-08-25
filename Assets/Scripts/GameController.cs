@@ -68,8 +68,8 @@ public class GameController : MonoBehaviour
     public int TotalExpenses { get { return FixedCosts + TeamCosts + DeadTeamMembers; } }
     public int TotalValue { get { return TotalIncome - TotalExpenses; } }
 
-    public string DebriefingText { get { return MapDebriefingText[NextLevelName]; } }
-    public string BriefingText { get { return MapBriefingText[NextLevelName]; } }
+    public string DebriefingText { get { string retval; if (!MapDebriefingText.TryGetValue(NextLevelName, out retval)) { retval = ""; Debug.Log("Not Found"); } return retval; ; } }
+    public string BriefingText { get { string retval; if (!MapBriefingText.TryGetValue(NextLevelName, out retval)) { retval = ""; } return retval; ; } }
 
     #endregion Debriefing Stuff
 

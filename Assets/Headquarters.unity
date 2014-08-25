@@ -3126,7 +3126,7 @@ GameObject:
   - 114: {fileID: 129899453}
   m_Layer: 8
   m_Name: DebriefingText
-  m_TagString: DebriefingController
+  m_TagString: BriefingTextValue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
