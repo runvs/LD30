@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAttacker : MonoBehaviour 
+public class EnemyAttacker : MonoBehaviour
 {
 
     private float AttackTimer;
@@ -12,24 +12,26 @@ public class EnemyAttacker : MonoBehaviour
     Rigidbody2D rgdb2d;
 
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         rgdb2d = this.gameObject.GetComponent<Rigidbody2D>();
         UnitTargetEvenetManager.OnDelete += RemoveTarget;
         this.GetComponent<AttackTarget>().SetNames();
         this.GetComponent<HealthController>().GetVariables(this.GetComponent<AttackTarget>().Name);
-
     }
+
 
     private void RemoveTarget(string name)
     {
         Target = null;
     }
-    
+
+
     // Update is called once per frame
-    void Update () 
+    void Update()
     {
         AttackTimer -= Time.deltaTime;
+        Rotate();
         if (Target)
         {
             Vector3 TargetPosition = Target.transform.position;
@@ -48,6 +50,9 @@ public class EnemyAttacker : MonoBehaviour
             }
 
             CapVelocity();
+
+
+
         }
         else
         {
@@ -61,6 +66,16 @@ public class EnemyAttacker : MonoBehaviour
             }
         }
 
+
+    }
+
+    private void Rotate()
+    {
+        if (Target)
+        {
+            Vector3 difference = Target.transform.position - this.transform.position;
+            this.transform.localRotation = Quaternion.FromToRotation(new Vector3(1, 0, 0), difference);
+        }
 
     }
 

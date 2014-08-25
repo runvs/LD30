@@ -37,7 +37,7 @@ public class BattleSystem : MonoBehaviour
 
     public void SpawnExplosion(Vector3 position, Vector3 velocity, GameObject Shooter)
     {
-        Debug.Log("SpawnExplosion");
+        //Debug.Log("SpawnExplosion");
         Instantiate(DebrisParticles, position, Quaternion.FromToRotation(new Vector3(0, 0, 1), velocity));
         //explo.GetComponent<Rigidbody2D>().velocity = velocity;
         //explo.GetComponent<BulletScript>().Shooter = Shooter;

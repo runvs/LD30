@@ -2,17 +2,14 @@
 public static class GameProperties
 {
 
-    public static float UnitMaxVelocity { get { return 1.4f; } }
+    public static float UnitMaxVelocity { get { return 1.3f; } }
     public static float UnitMoveVelocityFactor { get { return 1.85f; } }
 
-    public static float UnitAttackTimerMax { get { return 0.9f; } }
-
-    public static float AttackPushBackForceFactor { get { return 20.0f; } }
+    public static float UnitAttackTimerMax { get { return 0.5f; } }
 
     public static float BulletSpeedFactor { get { return 12.0f; } }
 
-
-    public static float EnemyMaxVelocity { get { return 1.4f; } }
+    public static float EnemyMaxVelocity { get { return 1.5f; } }
     public static float EnemyAttackTimerMax { get { return 1.1f; } }
 
     public static int StartingMoney { get { return 2500; } }

@@ -12,10 +12,11 @@ public class TeamMember
 
 public class UnitProperties : MonoBehaviour
 {
-    public Dictionary<string, TeamMember> TeamMembers = new Dictionary<string, TeamMember>();
+    private Dictionary<string, TeamMember> TeamMembers;
 
     void Awake()
     {
+        TeamMembers = new Dictionary<string, TeamMember>();
         TeamMembers.Add("Arthur", new TeamMember { Name = "Arthur", Health = 0.4f, Attack = 0.1f, Science = 0.1f });
         TeamMembers.Add("Newton", new TeamMember { Name = "Newton", Health = 0.2f, Attack = 0.1f, Science = 0.4f });
         TeamMembers.Add("Jack", new TeamMember { Name = "Jack", Health = 0.2f, Attack = 0.5f, Science = 0.2f });

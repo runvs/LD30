@@ -51,10 +51,6 @@ public class AttackTarget : MonoBehaviour
         GameObject.FindGameObjectWithTag("UnitSelector").GetComponent<UnitSelector>().InputTimer += 0.15f;
     }
 
-    internal void PushBack(Vector3 direction)
-    {
-        this.GetComponent<Rigidbody2D>().AddForce(direction * 1.0f * GameProperties.AttackPushBackForceFactor);
-    }
 
     void OnMouseEnter()
     {
