@@ -68,12 +68,19 @@ public class GameController : MonoBehaviour
     public int TotalExpenses { get { return FixedCosts + TeamCosts + DeadTeamMembers; } }
     public int TotalValue { get { return TotalIncome - TotalExpenses; } }
 
+    public string DebriefingText { get { return MapDebriefingText[NextLevelName]; } }
+    public string BriefingText { get { return MapBriefingText[NextLevelName]; } }
+
     #endregion Debriefing Stuff
 
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        CreateMapDebriefingText();
+        NextLevelName = "AncientTemple";
     }
+
+
 
     void Update()
     {
@@ -130,4 +137,34 @@ public class GameController : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
     }
+
+    private void CreateMapDebriefingText()
+    {
+        MapDebriefingText = new Dictionary<string, string>();
+        MapDebriefingText.Add("DesertCanyon", "The Bridging Technology works fine..."); // blablabla
+        MapDebriefingText.Add("AlienBase", "To Be Done1");
+        MapDebriefingText.Add("GreatPlains", "To Be Done2");
+        MapDebriefingText.Add("MotherShip", "To Be Done3");
+
+        MapBriefingText = new Dictionary<string, string>();
+        MapBriefingText.Add("DesertCanyon", "While our Scientists investigate the data you rescued from the temple, we discovered another world to travel to. There we found signs of intelligent life. Be prepared!"); // blabla
+        MapBriefingText.Add("AlienBase", "To Be Done1"); // blabla
+        MapBriefingText.Add("GreatPlains", "To Be Done2"); // blabla
+        MapBriefingText.Add("MotherShip", "To Be Done3"); // blabla
+
+        MapNextLevelName = new Dictionary<string, string>();
+        MapNextLevelName.Add("AncientTemple", "DesertCanyon");
+        MapNextLevelName.Add("DesertCanyon", "AlienBase");
+        MapNextLevelName.Add("AlienBase", "GreatPlains");
+        MapNextLevelName.Add("GreatPlains", "MotherShip");
+    }
+
+    // for debriefing
+    private Dictionary<string, string> MapDebriefingText;
+    // for next mission introduction
+    private Dictionary<string, string> MapBriefingText;
+    // for Selecting the next Level String
+    private Dictionary<string, string> MapNextLevelName;
+
+    public string NextLevelName { get; set; }
 }
