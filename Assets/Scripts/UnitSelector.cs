@@ -161,29 +161,28 @@ public class UnitSelector : MonoBehaviour
 
     public void AddSelection(string name)
     {
-        if (!string.IsNullOrEmpty(name))
+        if (tut && !tut.IsMessagePresent || !tut)
         {
-            SelectedUnits.Add(name);
-            TutorialSelect();
-            PlaySelectSound();
-
-
-
-        }
-
-        GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
-        foreach (var s in SelectedUnits)
-        {
-            foreach (var o in units)
+            if (!string.IsNullOrEmpty(name))
             {
-                UnitScript u = o.GetComponent<UnitScript>();
-                if (u.Name == s)
+                SelectedUnits.Add(name);
+                TutorialSelect();
+                PlaySelectSound();
+            }
+
+            GameObject[] units = GameObject.FindGameObjectsWithTag("Units");
+            foreach (var s in SelectedUnits)
+            {
+                foreach (var o in units)
                 {
-                    u.SetSelectionEnabled(true);
+                    UnitScript u = o.GetComponent<UnitScript>();
+                    if (u.Name == s)
+                    {
+                        u.SetSelectionEnabled(true);
+                    }
                 }
             }
         }
-
     }
 
     public void DeselectAllUnits()

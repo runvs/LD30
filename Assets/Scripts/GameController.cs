@@ -68,12 +68,19 @@ public class GameController : MonoBehaviour
     public int TotalExpenses { get { return FixedCosts + TeamCosts + DeadTeamMembers; } }
     public int TotalValue { get { return TotalIncome - TotalExpenses; } }
 
+    public string DebriefingText { get { string retval; if (!MapDebriefingText.TryGetValue(NextLevelName, out retval)) { retval = ""; Debug.Log("Not Found"); } return retval; ; } }
+    public string BriefingText { get { string retval; if (!MapBriefingText.TryGetValue(NextLevelName, out retval)) { retval = ""; } return retval; ; } }
+
     #endregion Debriefing Stuff
 
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        CreateMapDebriefingText();
+        NextLevelName = "AncientTemple";
     }
+
+
 
     void Update()
     {
@@ -83,7 +90,7 @@ public class GameController : MonoBehaviour
 
             if (units.Length == 0)
             {
-                ResetGame();
+                ResetGame(false);
             }
         }
     }
@@ -117,17 +124,75 @@ public class GameController : MonoBehaviour
         ResearchPoints -= amount;
     }
 
-    public void ResetGame()
+    public void ResetGame(bool success)
     {
+        // back at base
         IsAtBase = true;
+        NextLevel();
+        // destroy Units
+        foreach (GameObject u in GameObject.FindGameObjectsWithTag("Units"))
+        {
+            Destroy(u);
+        }
 
-        var dc = GameObject.FindGameObjectWithTag("DebriefingController").GetComponent<DebriefingController>();
-        dc.SetValues();
-        dc.GetComponentInParent<Canvas>().enabled = true;
+        if (success)
+        {
+            FoundArtefacts += GameProperties.FoundArtifactReward;
+            MoneyAdd(GameProperties.FoundArtifactReward);
 
+            GainedResearchPoints += 15;
+            ResearchPointsAdd(15);
+        }
+
+        foreach (var go in GameObject.FindGameObjectsWithTag("Shots"))
+        {
+            Destroy(go);
+        }
+        Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
         MoneyRemove(FixedCosts);
 
-        Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
+
+    }
+
+    public void QuitToMenu()
+    {
+
+    }
+
+    private void CreateMapDebriefingText()
+    {
+        MapDebriefingText = new Dictionary<string, string>();
+        MapDebriefingText.Add("DesertCanyon", "The Bridging Technology works fine..."); // blablabla
+        MapDebriefingText.Add("AlienBase", "To Be Done1");
+        MapDebriefingText.Add("GreatPlains", "To Be Done2");
+        MapDebriefingText.Add("MotherShip", "To Be Done3");
+
+        MapBriefingText = new Dictionary<string, string>();
+        MapBriefingText.Add("DesertCanyon", "While our Scientists investigate the data you rescued from the temple, we discovered another world to travel to. There we found signs of intelligent life. Be prepared!"); // blabla
+        MapBriefingText.Add("AlienBase", "To Be Done1"); // blabla
+        MapBriefingText.Add("GreatPlains", "To Be Done2"); // blabla
+        MapBriefingText.Add("MotherShip", "To Be Done3"); // blabla
+
+        MapNextLevelName = new Dictionary<string, string>();
+        MapNextLevelName.Add("AncientTemple", "DesertCanyon");
+        MapNextLevelName.Add("DesertCanyon", "AlienBase");
+        MapNextLevelName.Add("AlienBase", "GreatPlains");
+        MapNextLevelName.Add("GreatPlains", "MotherShip");
+    }
+
+    // for debriefing
+    private Dictionary<string, string> MapDebriefingText;
+    // for next mission introduction
+    private Dictionary<string, string> MapBriefingText;
+    // for Selecting the next Level String
+    private Dictionary<string, string> MapNextLevelName;
+
+    public string NextLevelName { get; set; }
+
+    public void NextLevel()
+    {
+        NextLevelName = MapNextLevelName[NextLevelName];
+        Application.LoadLevel("Headquarters");
     }
 }
