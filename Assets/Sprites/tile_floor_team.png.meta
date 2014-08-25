@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: cd440a66ba016dd4a825931d4ded923a
+guid: 2cb5946746eeece4d8b3aed542065c86
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tile_wall
+    21300000: tile_floor_team
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
