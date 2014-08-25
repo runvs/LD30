@@ -83,6 +83,9 @@ public class UnitScript : MonoBehaviour
         if (AltarTimeRemaining > 0)
         {
             AltarTimeRemaining -= Time.deltaTime / AttributeConverter.GetScienceTimeFactorFromAttribute(GetComponent<HealthController>().Attribute_Science, false);
+
+            AltarTarget.GetComponent<AltarAction>().SetProgress(AltarTimeRemaining);
+
             if (AltarTimeRemaining <= 0)
             {
                 AltarTarget.GetComponent<AltarAction>().SetFinished();

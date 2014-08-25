@@ -173,7 +173,7 @@ public class GameController : MonoBehaviour
         {
             Destroy(go);
         }
-        Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));
+        //Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));    // this will be kept
         MoneyRemove(FixedCosts);
 
         GameObject.FindGameObjectWithTag("bgm").GetComponent<MusicManager>().StartMenuMusic();
@@ -181,6 +181,8 @@ public class GameController : MonoBehaviour
 
     public void QuitToMenu()
     {
+        Destroy(GameObject.FindGameObjectWithTag("MainUICanvas"));    // this will be kept
+        Destroy(GameObject.FindGameObjectWithTag("bgm"));
     }
 
     private void CreateMapDebriefingText()
