@@ -17,7 +17,7 @@ public static class GameProperties
     public static int BaseAttributeCosts { get { return 5000; } }
     public static float AttributeIncreaseValue { get { return 0.05f; } }
 
-    public static int EnemyKillMoneyReward { get { return 60; } }
+    public static int EnemyKillMoneyReward { get { return 37; } }
     public static int UnitLostMoneyFine { get { return 500; } }
 
     public static int FoundArtifactRPReward { get { return 15; } }
