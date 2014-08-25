@@ -10,6 +10,8 @@ public class AltarAction : MonoBehaviour
     public float AltarTime;
     public float AltarTimeRemaining;
 
+    public bool Final;
+
 
     // Use this for initialization
     void Start()
@@ -47,12 +49,20 @@ public class AltarAction : MonoBehaviour
 
     internal void SetFinished()
     {
-        Debug.Log("Altar is finished.");
         GameController gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        if (!Final)
+        {
+            //Debug.Log("Altar is finished.");
 
-        gc.ResetGame(true);
 
-        Finished = true;
+            gc.ResetGame(true);
+
+            Finished = true;
+        }
+        else
+        {
+            gc.QuitToMenu();
+        }
     }
 
     internal void SetProgress(float time)
