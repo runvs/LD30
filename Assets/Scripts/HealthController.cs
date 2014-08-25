@@ -105,7 +105,6 @@ public class HealthController : MonoBehaviour
                 UnitTargetEvenetManager.Call(this.gameObject.GetComponent<UnitScript>().Name);
                 gc.MoneyRemove(GameProperties.UnitLostMoneyFine);
                 gc.DeadTeamMembers += GameProperties.UnitLostMoneyFine;
-
             }
             else
             {

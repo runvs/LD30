@@ -2,14 +2,14 @@
 
 public class AltarAction : MonoBehaviour
 {
-
-
     public bool Finished;
     public bool InUse;
 
     public EnemySpawner[] Spawners;
 
     public float AltarTime;
+    public float AltarTimeRemaining;
+
 
     // Use this for initialization
     void Start()
@@ -53,5 +53,10 @@ public class AltarAction : MonoBehaviour
         gc.ResetGame(true);
 
         Finished = true;
+    }
+
+    internal void SetProgress(float time)
+    {
+        AltarTimeRemaining = time;
     }
 }
