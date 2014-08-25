@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: cd440a66ba016dd4a825931d4ded923a
+guid: 624d94977e7d80142b4c9a85268bc114
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tile_wall
+    21300000: tile_floor_exercise
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -2
   maxTextureSize: 1024
   textureSettings:
     filterMode: 0

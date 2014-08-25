@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: cd440a66ba016dd4a825931d4ded923a
+guid: da83adedf57b8f24e9cf4201f2b41c32
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tile_wall
+    21300000: tile_floor_debrief_eagle
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
