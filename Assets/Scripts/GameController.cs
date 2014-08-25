@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static List<string> SelectedTeamMembers = new List<string>();
     public static List<string> TeamMembersInExercise = new List<string>();
+    public static List<string> DeadUnits;
 
     public int Money = GameProperties.StartingMoney;
     public int ResearchPoints = GameProperties.StartingResearchPoints;
@@ -55,8 +56,6 @@ public class GameController : MonoBehaviour
     {
         DeadUnits.Add(name);
     }
-
-    List<string> DeadUnits;
 
 
 
