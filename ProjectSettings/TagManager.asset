@@ -25,6 +25,7 @@ TagManager:
   - MainUICanvas
   - Hud
   - MothershipShield
+  - CanvasQuitDisplay
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
