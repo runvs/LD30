@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mat: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .843137264, g: .843137264, b: .643137276, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: f5edf5cf1130c2144a156b200c7ffa65, type: 3}
     m_FontSize: 20
@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mat: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .843137264, g: .843137264, b: .643137276, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: f5edf5cf1130c2144a156b200c7ffa65, type: 3}
     m_FontSize: 20
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mat: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .843137264, g: .843137264, b: .643137276, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: f5edf5cf1130c2144a156b200c7ffa65, type: 3}
     m_FontSize: 20
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mat: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .843137264, g: .843137264, b: .643137276, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: f5edf5cf1130c2144a156b200c7ffa65, type: 3}
     m_FontSize: 30
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mat: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .843137264, g: .843137264, b: .643137276, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: f5edf5cf1130c2144a156b200c7ffa65, type: 3}
     m_FontSize: 20
